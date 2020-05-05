@@ -8,15 +8,15 @@ button3.addEventListener('click', redirectToCoqualmo)
 
 
 function redirectToCocomo() {
-    window.location.href = "calculator/cocomo.html"
+    window.location.href = "cocomo.html"
 
 }
 function redirectToCocomo2() {
-    window.location.href = "calculator/cocomo2.html"
+    window.location.href = "cocomo2.html"
 
 }
 function redirectToCoqualmo() {
-    window.location.href = "calculator/coqualmo.html"
+    window.location.href = "coqualmo.html"
 
 }
 
