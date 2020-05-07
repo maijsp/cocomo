@@ -1,13 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"></head>
-    <link rel="stylesheet" href="css/calculator.css"">
-    <title>COCOMO II Calculator</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>COCOMO 2 Calculator</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
+<link rel="stylesheet" href="css/simple-sidebar.css">
+<!-- Custom styles for this template -->
+<link href="css/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
 <body>
-    <h1>COCOMO 2 Calculator</h1>
+
+    <div class="d-flex" id="wrapper">
+
+        <!-- Sidebar -->
+        <div class="bg-light border-right " id="sidebar-wrapper">
+            <div class="sidebar-heading">COCOMO II</div>
+            <div class="list-group list-group-flush">
+                <a href="#application" class="list-group-item list-group-item-action bg-light">Application
+                    Composition</a>
+                <a href="#early-design" class="list-group-item list-group-item-action bg-light">Early Design</a>
+                <a href="#post-architecture"
+                    class="list-group-item list-group-item-action bg-light">Post-Architecture</a>
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+            </nav>
+
+            <div id="application" class="main_container container-fluid">
+                <h1 class="mt-4">Application Composition</h1>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Object points count</span>
+                    </div>
+                    <input name="opc" type="number" class="form-control" aria-label="Default"
+                        aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">% reuse</span>
+                    </div>
+                    <input name="reuse" type="number" class="form-control" aria-label="Default"
+                        aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="form-group">
+                    <label for="prod">Developer's Experience and Development Environment Maturity</label>
+                    <select class="form-control" id="prod">
+                        <option value="4">Very Low</option>
+                        <option value="7">Low</option>
+                        <option value="13">Norminal</option>
+                        <option value="25">High</option>
+                        <option value="50">Very High</option>
+                    </select>
+                </div>
+                <div class="center">
+                    <input class="btn btn-primary" type="button" value="Calculate" onclick="calculateApplication()">
+                </div>
+                <div id="result-application">
+                </div>
+            </div>
+
+            
+            <div id="early-design" class="container-fluid main_container">
+                <h1 class="mt-4">Early Design</h1>
+                <p>The starting state of the menu will appear collapsed on smaller screens, and will appear
+                    non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
+                <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is
+                    optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID
+                    which will toggle the menu when clicked.</p>
+                <p>The starting state of the menu will appear collapsed on smaller screens, and will appear
+                    non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
+                <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is
+                    optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID
+                    which will toggle the menu when clicked.</p>
+                <p>The starting state of the menu will appear collapsed on smaller screens, and will appear
+                    non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
+                <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is
+                    optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID
+                    which will toggle the menu when clicked.</p>
+                <p>The starting state of the menu will appear collapsed on smaller screens, and will appear
+                    non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
+                <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is
+                    optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID
+                    which will toggle the menu when clicked.</p>
+                <p>The starting state of the menu will appear collapsed on smaller screens, and will appear
+                    non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
+                <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is
+                    optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID
+                    which will toggle the menu when clicked.</p>
+                <p>The starting state of the menu will appear collapsed on smaller screens, and will appear
+                    non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
+                <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is
+                    optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID
+                    which will toggle the menu when clicked.</p>
+                <p>The starting state of the menu will appear collapsed on smaller screens, and will appear
+                    non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
+                <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is
+                    optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID
+                    which will toggle the menu when clicked.</p>
+                <p>The starting state of the menu will appear collapsed on smaller screens, and will appear
+                    non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
+                <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is
+                    optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID
+                    which will toggle the menu when clicked.</p>
+            </div>
+            <div id="post-architecture" class="container-fluid main_container">
+                <h1 class="mt-4">Post-Architecture</h1>
+                <p>The starting state of the menu will appear collapsed on smaller screens, and will appear
+                    non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
+                <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is
+                    optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID
+                    which will toggle the menu when clicked.</p>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script src="js/cocomo2.js"></script>
+
+
+
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+
 </body>
+
 </html>
