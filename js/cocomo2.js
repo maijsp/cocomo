@@ -13,9 +13,9 @@ function calculateApplication() {
     console.log("Effort : " + effort)
 
     $('#result-application').html('');
-    $('#result-application').append('<div class="card border-success mb-3 style="max-width: 18rem;">'+
+    $('#result-application').append('<div class="shadow-drop-center card border-success mb-3 style="max-width: 18rem;">'+
     '<div class="card-header">Result'+
-    '<div class="card-body text-secondary">'+
-    '<h5 class="card-title">Effort : ' + effort +
-    '</h5></div></div></div>')
+    '<div class="card-body text-success">'+
+        '<h5 class="card-title">Effort : ' + effort +
+    '   </h5></div></div></div>')
 }
