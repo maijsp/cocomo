@@ -235,10 +235,264 @@
             
                 <!--Post architecture-->
             <div id="post-architecture" class="container-fluid main_container">
-                <h2 class="mt-4">Post-Architecture</h2>
-
+                <div class="row">
+                    <div class="col-md">
+                        <h2 class="mt-4">Post-Architecture</h2>
+                        <h5 class="mt-4">5 Scaling Factors</h5>
+                        <div class="dropdown-inline">
+                            <div class="form-group dropdown-half">
+                                <label for="PREC1">Precedentedness</label>
+                                <select class="form-control" id="PREC">
+                                    <option value="4.05">Very Low</option>
+                                    <option value="3.24">Low</option>
+                                    <option value="2.43" selected>Norminal</option>
+                                    <option value="1.62">High</option>
+                                    <option value="0.81">Very High</option>
+                                    <option value="0.00">Extra High</option>
+                                </select>
+                            </div>
+                            <div class="form-group dropdown-half">
+                                <label for="DFEX1">Development Flexibility</label>
+                                <select class="form-control" id="DFEX">
+                                    <option value="6.07">Very Low</option>
+                                    <option value="4.86">Low</option>
+                                    <option value="3.64" selected>Norminal</option>
+                                    <option value="2.43">High</option>
+                                    <option value="1.21">Very High</option>
+                                    <option value="0.00">Extra High</option>
+                                </select>
+                            </div>
+                            <div class="form-group dropdown-half">
+                                <label for="ARCH1">Architecture / Risk
+                                    Resolution</label>
+                                <select class="form-control" id="ARCH">
+                                    <option value="4.22">Very Low</option>
+                                    <option value="3.38">Low</option>
+                                    <option value="2.53" selected>Norminal</option>
+                                    <option value="1.69">High</option>
+                                    <option value="0.84">Very High</option>
+                                    <option value="0.00">Extra High</option>
+                                </select>
+                            </div>
+                            <div class="form-group dropdown-half">
+                                <label for="TEAM1">Team Cohesion</label>
+                                <select class="form-control" id="TEAM">
+                                    <option value="4.94">Very Low</option>
+                                    <option value="3.95">Low</option>
+                                    <option value="2.97" selected>Norminal</option>
+                                    <option value="1.98">High</option>
+                                    <option value="0.99">Very High</option>
+                                    <option value="0.00">Extra High</option>
+                                </select>
+                            </div>
+                            <div class="form-group dropdown-half">
+                                <label for="PRMY1">Process Maturity</label>
+                                <select class="form-control" id="PRMY">
+                                    <option value="4.54">Very Low</option>
+                                    <option value="3.64">Low</option>
+                                    <option value="2.73" selected>Norminal</option>
+                                    <option value="1.82">High</option>
+                                    <option value="0.91">Very High</option>
+                                    <option value="0.00">Extra High</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md">
+                        <h2 class="mt-4">17 Effort Multipliers</h2>
+                        <div class="dropdown-inline">
+                            <div class="form-group dropdown-half">
+                                <label for="RELY">RELY</label>
+                                <select class="form-control" id="RELY">
+                                    <option value="0.75">Very Low</option>
+                                    <option value="0.88">Low</option>
+                                    <option value="1.00" selected>Norminal</option>
+                                    <option value="1.15">High</option>
+                                    <option value="1.39">Very High</option>
+                                </select>
+                            </div>
+                            <div class="dropdown-inline">
+                             <div class="form-group dropdown-half">
+                                 <label for="DATA">DATA</label>
+                                 <select class="form-control" id="DATA">
+                                     <option value="0.93">Low</option>
+                                     <option value="1.00" selected>Norminal</option>
+                                     <option value="1.09">High</option>
+                                     <option value="1.19">Very High</option>
+                                 </select>
+                             </div>
+                             <div class="dropdown-inline">
+                                 <div class="form-group dropdown-half">
+                                     <label for="CPLX">CPLX</label>
+                                     <select class="form-control" id="CPLX">
+                                         <option value="0.75">Very Low</option>
+                                         <option value="0.88">Low</option>
+                                         <option value="1.00" selected>Norminal</option>
+                                         <option value="1.15">High</option>
+                                         <option value="1.30">Very High</option>
+                                         <option value="1.66">Extra High</option>
+                                 </select>
+                             </div>
+                             <div class="dropdown-inline">
+                                 <div class="form-group dropdown-half">
+                                     <label for="RUSE1">RUSE</label>
+                                     <select class="form-control" id="RUSE1">
+                                         <option value="0.91">Low</option>
+                                         <option value="1.00" selected>Norminal</option>
+                                         <option value="1.14">High</option>
+                                         <option value="1.29">Very High</option>
+                                         <option value="1.49">Extra High</option>
+                                 </select>
+                              </div>
+                                 <div class="dropdown-inline">
+                                 <div class="form-group dropdown-half">
+                                     <label for="DOCU">DOCU</label>
+                                      <select class="form-control" id="DOCU">
+                                         <option value="0.89">Very Low</option>
+                                         <option value="0.95">Low</option>
+                                         <option value="1.00" selected>Norminal</option>
+                                         <option value="1.06">High</option>
+                                         <option value="1.13">Very High</option>
+                                 </select>
+                             </div>
+                             <div class="dropdown-inline">
+                                 <div class="form-group dropdown-half">
+                                     <label for="TIME">TIME</label>
+                                      <select class="form-control" id="TIME">
+                                         <option value="1.00" selected>Norminal</option>
+                                         <option value="1.11">High</option>
+                                         <option value="1.31">Very High</option>
+                                         <option value="1.67">Extra High</option>
+                                 </select>
+                                 </div>
+                              <div class="dropdown-inline">
+                                 <div class="form-group dropdown-half">
+                                     <label for="STOR">STOR</label>
+                                     <select class="form-control" id="STOR">
+                                         <option value="1.00" selected>Norminal</option>
+                                         <option value="1.06">High</option>
+                                         <option value="1.21">Very High</option>
+                                         <option value="1.57">Extra High</option>
+                                 </select>
+                             </div>
+                             <div class="dropdown-inline">
+                                 <div class="form-group dropdown-half">
+                                     <label for="PVOL">PVOL</label>
+                                     <select class="form-control" id="PVOL">
+                                         <option value="0.87">Low</option>
+                                         <option value="1.00" selected>Norminal</option>
+                                         <option value="1.15">High</option>
+                                         <option value="1.30">Very High</option>
+                                     </select>
+                             </div>
+                             <div class="dropdown-inline">
+                                 <div class="form-group dropdown-half">
+                                     <label for="ACAP">ACAP</label>
+                                      <select class="form-control" id="ACAP">
+                                         <option value="1.50">Very Low</option>
+                                         <option value="1.22">Low</option>
+                                         <option value="1.00" selected>Norminal</option>
+                                         <option value="0.83">High</option>
+                                         <option value="0.67">Very High</option>
+                                  </select>
+                             </div>
+                             <div class="dropdown-inline">
+                                 <div class="form-group dropdown-half">
+                                     <label for="PCAP">PCAP</label>
+                                      <select class="form-control" id="PCAP">
+                                         <option value="1.37">Very Low</option>
+                                         <option value="1.16">Low</option>
+                                         <option value="1.00" selected>Norminal</option>
+                                         <option value="0.87">High</option>
+                                         <option value="0.74">Very High</option>
+                                  </select>
+                             </div>
+                             <div class="dropdown-inline">
+                                 <div class="form-group dropdown-half">
+                                     <label for="PCON">PCON</label>
+                                      <select class="form-control" id="PCON">
+                                         <option value="1.24">Very Low</option>
+                                         <option value="1.10">Low</option>
+                                         <option value="1.00" selected>Norminal</option>
+                                         <option value="0.92">High</option>
+                                         <option value="0.84">Very High</option>
+                                  </select>
+                             </div>
+                             <div class="dropdown-inline">
+                                 <div class="form-group dropdown-half">
+                                     <label for="AXEP">AXEP</label>
+                                      <select class="form-control" id="AXEP">
+                                         <option value="1.22">Very Low</option>
+                                         <option value="1.10">Low</option>
+                                         <option value="1.00" selected>Norminal</option>
+                                         <option value="0.89">High</option>
+                                         <option value="0.81">Very High</option>
+                                  </select>
+                             </div>
+                             <div class="dropdown-inline">
+                                 <div class="form-group dropdown-half">
+                                     <label for="PEXP">PEXP</label>
+                                      <select class="form-control" id="PEXP">
+                                         <option value="1.25">Very Low</option>
+                                         <option value="1.12">Low</option>
+                                         <option value="1.00" selected>Norminal</option>
+                                         <option value="0.88">High</option>
+                                         <option value="0.81">Very High</option>
+                                  </select>
+                             </div>
+                             <div class="dropdown-inline">
+                                 <div class="form-group dropdown-half">
+                                     <label for="LTEX">LTEX</label>
+                                      <select class="form-control" id="LTEX">
+                                         <option value="1.22">Very Low</option>
+                                         <option value="1.10">Low</option>
+                                         <option value="1.00" selected>Norminal</option>
+                                         <option value="0.91">High</option>
+                                         <option value="0.84">Very High</option>
+                                  </select>
+                             </div>
+                             <div class="dropdown-inline">
+                                 <div class="form-group dropdown-half">
+                                     <label for="LTEX">TOOL</label>
+                                      <select class="form-control" id="TOOL">
+                                         <option value="1.24">Very Low</option>
+                                         <option value="1.12">Low</option>
+                                         <option value="1.00" selected>Norminal</option>
+                                         <option value="0.86">High</option>
+                                         <option value="0.72">Very High</option>
+                                  </select>
+                             </div>
+                             <div class="dropdown-inline">
+                                 <div class="form-group dropdown-half">
+                                     <label for="SITE">SITE</label>
+                                      <select class="form-control" id="SITE">
+                                         <option value="1.25">Very Low</option>
+                                         <option value="1.10">Low</option>
+                                         <option value="1.00" selected>Norminal</option>
+                                         <option value="0.92">High</option>
+                                         <option value="0.84">Very High</option>
+                                         <option value="0.78">Extra High</option>
+                                  </select>
+                             </div>
+                             <div class="dropdown-inline">
+                                 <div class="form-group dropdown-half">
+                                     <label for="SCED">SCED</label>
+                                      <select class="form-control" id="SCED">
+                                         <option value="1.29">Very Low</option>
+                                         <option value="1.10">Low</option>
+                                         <option value="1.00" selected>Norminal</option>
+                                         <option value="1.00">High</option>
+                                         <option value="1.00">Very High</option>
+                                  </select>
+                             </div>
+                         </div>
+                    </div>
+                </div>
                 <!-- /#page-content-wrapper -->
-            </div>
+
+                </div> <!--DIV CONTAINER-->
                 <!-- /#wrapper -->
 
                 <!-- Bootstrap core JavaScript -->
