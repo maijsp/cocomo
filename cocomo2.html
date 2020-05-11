@@ -13,7 +13,6 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
 <link rel="stylesheet" href="css/simple-sidebar.css">
 <!-- Custom styles for this template -->
 <link href="css/simple-sidebar.css" rel="stylesheet">
@@ -311,7 +310,7 @@
                 <!-- 17 Effort Multipliers -->
                 <div class="row">
                     <div class="col-md">
-                        <h5 class="mt-4">17 Effort Multipliers</h2>
+                        <h5 class="mt-4">17 Effort Multipliers</h5>
                         <div class="dropdown-inline">
                             <div class="form-group dropdown-half">
                                 <label for="RELY">RELY</label>
@@ -382,7 +381,7 @@
                                         <option value="1.11">High</option>
                                         <option value="1.31">Very High</option>
                                         <option value="1.67">Extra High</option>
-                                </select>
+                                    </select>
                                 </div>
                             
                                 <div class="form-group dropdown-half">
@@ -392,8 +391,8 @@
                                         <option value="1.06">High</option>
                                         <option value="1.21">Very High</option>
                                         <option value="1.57">Extra High</option>
-                                </select>
-                            </div>
+                                    </select>
+                                </div>
                             
                                 <div class="form-group dropdown-half">
                                     <label for="PVOL">PVOL</label>
@@ -403,7 +402,7 @@
                                         <option value="1.15">High</option>
                                         <option value="1.30">Very High</option>
                                     </select>
-                            </div>
+                                </div>
                             
                                 <div class="form-group dropdown-half">
                                     <label for="ACAP">ACAP</label>
@@ -414,7 +413,7 @@
                                         <option value="0.83">High</option>
                                         <option value="0.67">Very High</option>
                                 </select>
-                            </div>
+                                </div>
                             
                                 <div class="form-group dropdown-half">
                                     <label for="PCAP">PCAP</label>
@@ -424,10 +423,9 @@
                                         <option value="1.00" selected>Norminal</option>
                                         <option value="0.87">High</option>
                                         <option value="0.74">Very High</option>
-                                </select>
-                            </div>
+                                    </select>
+                                </div>
                         </div>
-                        
                     </div>
                 </div>
 
@@ -479,7 +477,7 @@
                         </div>
                         
                             <div class="form-group dropdown-half">
-                                <label for="LTEX">TOOL</label>
+                                <label for="TOOL">TOOL</label>
                                 <select class="form-control" id="TOOL">
                                     <option value="1.24">Very Low</option>
                                     <option value="1.12">Low</option>
@@ -528,7 +526,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-default1">KLOC</span>
                             </div>
-                            <input id="early-kloc1" name="early-kloc" type="number" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                            <input id="early-kloc1" name="early-kloc1" type="number" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
                         </div>
                     </div>
                 </div>
@@ -536,17 +534,22 @@
                 <div class = "row">
                     <div class = "col-md">
                         <div class="center">
-                            <input class="btn btn-primary" type="button" value="Calculate" onclick="calculateEarlyDesign()">
+                            <input class="btn btn-primary" type="button" value="Calculate" onclick="calculatePost()">
                         </div>
                     </div>
                 </div>
+                <div id="result-post">
+
+            </div>
                 
+            </div>
+            
                 
             </div><!-- MAIN CONTAINER FLUID-->
             
         </div> <!-- Page content Wrapper-->
                 <!-- /#wrapper -->
-
+    </div>
                 <!-- Bootstrap core JavaScript -->
                 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
                     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -569,6 +572,7 @@
                         $("#wrapper").toggleClass("toggled");
                     });
                 </script>
+
 </body>
 
 </html>

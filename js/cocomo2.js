@@ -53,7 +53,8 @@ function calculateEarlyDesign() {
     var PREX = parseFloat(document.getElementById('PREX').value)
     var FCIL = parseFloat(document.getElementById('FCIL').value)
     var SCED = parseFloat(document.getElementById('SCED').value)
-    var kloc = parseFloat(document.getElementById('early-design').getElementsByTagName('input').item(0).value)
+    // var kloc = document.getElementById('early-design').getElementsByTagName('input')
+    var kloc = parseFloat(document.getElementById('early-kloc').value)
 
     var EM = RCPX * RUSE * PDIF * PERS * PREX * FCIL * SCED
     // console.log('EM : ' + EM + ' KLOC : ' + kloc)
@@ -93,27 +94,40 @@ function calculatePost()
 {
     var A1 = 2.5
     var B1 = calculateBPost()
-    var RELY = parsefloat(document.getElementById('RELY').value)
-    var DATA = parsefloat(document.getElementById('DATA').value)
-    var CPLX = parsefloat(document.getElementById('CPLX').value)
-    var RUSE1 = parsefloat(document.getElementById('RUSE1').value)
-    var DOCU = parsefloat(document.getElementById('DOCU').value)
-    var TIME = parsefloat(document.getElementById('TIME').value)
-    var STOR = parsefloat(document.getElementById('STOR').value)
-    var PVOL = parsefloat(document.getElementById('PVOL').value)
-    var ACAP = parsefloat(document.getElementById('ACAP').value)
-    var PACP = parsefloat(document.getElementById('PCAP').value)
-    var PCON = parsefloat(document.getElementById('PCON').value)
-    var AEXP = parsefloat(document.getElementById('AEXP').value)
-    var PEXP = parsefloat(document.getElementById('PEXP').value)
-    var LTEX = parsefloat(document.getElementById('LTEX').value)
-    var TOOL = parsefloat(document.getElementById('TOOL').value)
-    var SITE = parsefloat(document.getElementById('SITE').value)
-    var SCED = parsefloat(document.getElementById('SCED').value)
+    var RELY = parseFloat(document.getElementById('RELY').value)
+    var DATA = parseFloat(document.getElementById('DATA').value)
+    var CPLX = parseFloat(document.getElementById('CPLX').value)
+    var RUSE1 = parseFloat(document.getElementById('RUSE1').value)
+    var DOCU = parseFloat(document.getElementById('DOCU').value)
+    var TIME = parseFloat(document.getElementById('TIME').value)
+    var STOR = parseFloat(document.getElementById('STOR').value)
+    var PVOL = parseFloat(document.getElementById('PVOL').value)
+    var ACAP = parseFloat(document.getElementById('ACAP').value)
+    var PCAP = parseFloat(document.getElementById('PCAP').value)
+    var PCON = parseFloat(document.getElementById('PCON').value)
+    var AXEP = parseFloat(document.getElementById('AXEP').value)
+    var PEXP = parseFloat(document.getElementById('PEXP').value)
+    var LTEX = parseFloat(document.getElementById('LTEX').value)
+    var TOOL = parseFloat(document.getElementById('TOOL').value)
+    var SITE = parseFloat(document.getElementById('SITE').value)
+    var SCED = parseFloat(document.getElementById('SCED').value)
+    var kloc1 = parseFloat(document.getElementById('early-kloc1').value)
 
-    var EM1 = RELY * DATA * CPLX * RUSE1 * DOCU * TIME * STOR * PVOL * ACAP * PACP * PCON * AEXP 
+    console.log(PCON)
+
+    var EM1 = RELY * DATA * CPLX * RUSE1 * DOCU * TIME * STOR * PVOL * ACAP * PCAP * PCON * AXEP 
              * PEXP * LTEX * TOOL * SITE * SCED
     //console.log(EM1)
-        
+    var PM1 = (A1 * (kloc1 ** B1) * EM1).toFixed(2)
+    console.log('Effort : ' + PM1)
+
+    
+    $('#result-post').html('');
+    $('#result-post').append('<div class="shadow-drop-center card border-success mb-3 style="max-width: 18rem;">'+
+    '<div class="card-header">Result'+
+    '<div class="card-body text-success">'+
+        '<h5 class="card-title">Effort : ' + PM1 +
+    '   </h5></div></div></div>')
+    
 }
 
