@@ -110,7 +110,7 @@ function calculateCoding()  {
             ( TEAM) * ( RESL) * ( PMAT)
 
     console.log(QAF)
-    var DIcode = parseFloat((A * ((kloc) ** 1) * QAF).toFixed(2))
+    var DIcode = parseFloat((A * ((kloc) ** 1) * QAF)).toFixed(2)
     document.querySelector('input[name="cod-result"]').value = DIcode
     return DIcode
 }
