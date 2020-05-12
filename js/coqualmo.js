@@ -6,8 +6,6 @@ input_kloc.addEventListener('change', () => {
     calculateCoding()
 })
 
-
-
 function calculateReq(){
     var ACAP =  parseFloat(document.querySelector('input[name="req-acap"]:checked').value)
     var PCAP =  parseFloat(document.querySelector('input[name="req-pcap"]:checked').value)
@@ -31,9 +29,9 @@ function calculateReq(){
     var RESL =  parseFloat(document.querySelector('input[name="req-resl"]:checked').value)
     var PMAT =  parseFloat(document.querySelector('input[name="req-pmat"]:checked').value)
     var KLOC =  document.getElementById('kloc').value
-    var DI = 10
-    var TotalDireq = (DI-ACAP) * (DI-PCAP) * (DI-AEXP) * (DI-PEXP) * (DI-LTEX) * (DI-PCON) * (DI-TOOL) * (DI-SITE) * (DI-SCED) * (DI-TIME) * (DI-STOR) * (DI-PVOL)
-                    * (DI-RELY) * (DI-DATA) * (DI-RUSE) * (DI-DOCU) * (DI-CPLX) * (DI-PREC) * (DI-TEAM) * (DI-RESL) * (DI-PMAT)
+  
+    var TotalDireq = (ACAP) * (PCAP) * (AEXP) * (PEXP) * (LTEX) * (PCON) * (TOOL) * (SITE) * (SCED) * (TIME) * (STOR) * (PVOL)
+                    * (RELY) * (DATA) * (RUSE) * (DOCU) * (CPLX) * (PREC) * (TEAM) * (RESL) * (PMAT)
     var A = 2.5
     var B = 1
     var Sum1 = A * (KLOC)**B * TotalDireq
@@ -65,9 +63,9 @@ function calculateDesign()
     var RESL2 =  parseFloat(document.querySelector('input[name="des-resl"]:checked').value)
     var PMAT2 =  parseFloat(document.querySelector('input[name="des-pmat"]:checked').value)
     var KLOC =  document.getElementById('kloc').value
-    var DI = 20
-    var TotalDireq = (DI-ACAP2) * (DI-PCAP2) * (DI-AEXP2) * (DI-PEXP2) * (DI-LTEX2) * (DI-PCON2) * (DI-TOOL2) * (DI-SITE2) * (DI-SCED2) * (DI-TIME2) * (DI-STOR2) * (DI-PVOL2)
-    * (DI-RELY2) * (DI-DATA2) * (DI-RUSE2) * (DI-DOCU2) * (DI-CPLX2) * (DI-PREC2) * (DI-TEAM2) * (DI-RESL2) * (DI-PMAT2)
+ 
+    var TotalDireq = (ACAP2) * (PCAP2) * (AEXP2) * (PEXP2) * (LTEX2) * (PCON2) * (TOOL2) * (SITE2) * (SCED2) * (TIME2) * (STOR2) * (PVOL2)
+    * (RELY2) * (DATA2) * (RUSE2) * (DOCU2) * (CPLX2) * (PREC2) * (TEAM2) * (RESL2) * (PMAT2)
     var A2 = 2.5
     var B2 = 1
     var Sum2 = A2 * (KLOC)**B2 * TotalDireq
@@ -77,7 +75,6 @@ function calculateDesign()
 
 function calculateCoding()  {
     var A = 2.5
-    var DI = 30
     var kloc = parseFloat(document.getElementById('kloc').value)
 
     var ACAP = parseFloat(document.querySelector('input[name="cod-acap"]:checked').value)
@@ -102,10 +99,10 @@ function calculateCoding()  {
     var RESL = parseFloat(document.querySelector('input[name="cod-resl"]:checked').value)
     var PMAT = parseFloat(document.querySelector('input[name="cod-pmat"]:checked').value)
 
-    var QAF = (DI - ACAP) * (DI - PCAP) * (DI - AEXP) * (DI - PEXP) * (DI - LTEX) * (DI - PCON) *
-            (DI - TOOL) * (DI - SITE) * (DI - SCED) * (DI - TIME) * (DI - STOR) * (DI - PVOL) *
-            (DI - RELY) * (DI - DATA) * (DI - RUSE) * (DI - DOCU) * (DI - CPLX) * (DI - PREC) *
-            (DI - TEAM) * (DI - RESL) * (DI - PMAT)
+    var QAF = ( ACAP) * ( PCAP) * ( AEXP) * ( PEXP) * ( LTEX) * ( PCON) *
+            ( TOOL) * ( SITE) * ( SCED) * ( TIME) * ( STOR) * ( PVOL) *
+            ( RELY) * ( DATA) * ( RUSE) * ( DOCU) * ( CPLX) * ( PREC) *
+            ( TEAM) * ( RESL) * ( PMAT)
 
     console.log(QAF)
     var DIcode = parseFloat((A * ((kloc) ** 1) * QAF).toFixed(2))
