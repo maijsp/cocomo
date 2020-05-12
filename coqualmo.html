@@ -3,11 +3,711 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"></head>
+    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"></head>
     <link rel="stylesheet" href="css/calculator.css"">
     <title>COQUALMO Calculator</title>
 </head>
 <body>
-    <h1>COQUALMO Calculator</h1>
+    <div class="container">
+        <div class="row">
+            <h1>COQUALMO Calculator</h1>
+        </div>
+        
+        <!-- KLOC CARD START -->
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                      Size
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Input KLOC</h5>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                            <div class="input-group-text">Size</div>
+                            </div>
+                            <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Number of KLOC">
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        </div> <!-- KLOC CARD END -->
+
+        <!-- REQ. DI START -->
+        <div class="row top-50">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                      Requirement
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Requirement</h5>
+                        <table class="table">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">DI Drivers</th>
+                                <th scope="col">Very Low</th>
+                                <th scope="col">Low</th>
+                                <th scope="col">Nominal</th>
+                                <th scope="col">High</th>
+                                <th scope="col">Very High</th>
+                                <th scope="col">Extra High</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">ACAP</th>
+                                    <td><input type="radio" name="req-acap" id="req-acap" value="1.33"></td>
+                                    <td><input type="radio" name="req-acap" id="req-acap" value="1.15"></td>
+                                    <td><input type="radio" name="req-acap" id="req-acap" value="1.0"></td>
+                                    <td><input type="radio" name="req-acap" id="req-acap" value="0.87"></td>
+                                    <td><input type="radio" name="req-acap" id="req-acap" value="0.75"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">PCAP</th>
+                                    <td><input type="radio" name="req-pcap" id="req-pcap" value="1.0"></td>
+                                    <td><input type="radio" name="req-pcap" id="req-pcap" value="1.0"></td>
+                                    <td><input type="radio" name="req-pcap" id="req-pcap" value="1.0"></td>
+                                    <td><input type="radio" name="req-pcap" id="req-pcap" value="1.0"></td>
+                                    <td><input type="radio" name="req-pcap" id="req-pcap" value="1.0"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">AEXP</th>
+                                    <td><input type="radio" name="req-aexp" id="req-aexp" value="1.24"></td>
+                                    <td><input type="radio" name="req-aexp" id="req-aexp" value="1.11"></td>
+                                    <td><input type="radio" name="req-aexp" id="req-aexp" value="1.0"></td>
+                                    <td><input type="radio" name="req-aexp" id="req-aexp" value="0.90"></td>
+                                    <td><input type="radio" name="req-aexp" id="req-aexp" value="0.81"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">PEXP</th>
+                                    <td><input type="radio" name="req-pexp" id="req-pexp" value="1.11"></td>
+                                    <td><input type="radio" name="req-pexp" id="req-pexp" value="1.05"></td>
+                                    <td><input type="radio" name="req-pexp" id="req-pexp" value="1.0"></td>
+                                    <td><input type="radio" name="req-pexp" id="req-pexp" value="0.95"></td>
+                                    <td><input type="radio" name="req-pexp" id="req-pexp" value="0.90"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">LTEX</th>
+                                    <td><input type="radio" name="req-ltex" id="req-ltex" value="1.07"></td>
+                                    <td><input type="radio" name="req-ltex" id="req-ltex" value="1.03"></td>
+                                    <td><input type="radio" name="req-ltex" id="req-ltex" value="1.0"></td>
+                                    <td><input type="radio" name="req-ltex" id="req-ltex" value="0.96"></td>
+                                    <td><input type="radio" name="req-ltex" id="req-ltex" value="0.93"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">PCON</th>
+                                    <td><input type="radio" name="req-pcon" id="req-pcon" value="1.22"></td>
+                                    <td><input type="radio" name="req-pcon" id="req-pcon" value="1.10"></td>
+                                    <td><input type="radio" name="req-pcon" id="req-pcon" value="1.0"></td>
+                                    <td><input type="radio" name="req-pcon" id="req-pcon" value="0.91"></td>
+                                    <td><input type="radio" name="req-pcon" id="req-pcon" value="0.82"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">TOOL</th>
+                                    <td><input type="radio" name="req-tool" id="req-tool" value="1.09"></td>
+                                    <td><input type="radio" name="req-tool" id="req-tool" value="1.04"></td>
+                                    <td><input type="radio" name="req-tool" id="req-tool" value="1.0"></td>
+                                    <td><input type="radio" name="req-tool" id="req-tool" value="0.96"></td>
+                                    <td><input type="radio" name="req-tool" id="req-tool" value="0.92"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">SITE</th>
+                                    <td><input type="radio" name="req-site" id="req-site" value="1.20"></td>
+                                    <td><input type="radio" name="req-site" id="req-site" value="1.10"></td>
+                                    <td><input type="radio" name="req-site" id="req-site" value="1.0"></td>
+                                    <td><input type="radio" name="req-site" id="req-site" value="0.94"></td>
+                                    <td><input type="radio" name="req-site" id="req-site" value="0.91"></td>
+                                    <td><input type="radio" name="req-site" id="req-site" value="0.83"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">SCED</th>
+                                    <td><input type="radio" name="req-sced" id="req-sced" value="1.18"></td>
+                                    <td><input type="radio" name="req-sced" id="req-sced" value="1.09"></td>
+                                    <td><input type="radio" name="req-sced" id="req-sced" value="1.0"></td>
+                                    <td><input type="radio" name="req-sced" id="req-sced" value="0.92"></td>
+                                    <td><input type="radio" name="req-sced" id="req-sced" value="0.85"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">TIME</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><input type="radio" name="req-time" id="req-time" value="1.0"></td>
+                                    <td><input type="radio" name="req-time" id="req-time" value="1.03"></td>
+                                    <td><input type="radio" name="req-time" id="req-time" value="1.04"></td>
+                                    <td><input type="radio" name="req-time" id="req-time" value="1.08"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">STOR</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><input type="radio" name="req-stor" id="req-stor" value="1.0"></td>
+                                    <td><input type="radio" name="req-stor" id="req-stor" value="1.03"></td>
+                                    <td><input type="radio" name="req-stor" id="req-stor" value="1.04"></td>
+                                    <td><input type="radio" name="req-stor" id="req-stor" value="1.08"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">PVOL</th>
+                                    <td></td>
+                                    <td><input type="radio" name="req-pvol" id="req-pvol" value="0.86"></td>
+                                    <td><input type="radio" name="req-pvol" id="req-pvol" value="1.0"></td>
+                                    <td><input type="radio" name="req-pvol" id="req-pvol" value="1.08"></td>
+                                    <td><input type="radio" name="req-pvol" id="req-pvol" value="1.16"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">RELY</th>
+                                    <td><input type="radio" name="req-rely" id="req-rely" value="1.43"></td>
+                                    <td><input type="radio" name="req-rely" id="req-rely" value="1.2"></td>
+                                    <td><input type="radio" name="req-rely" id="req-rely" value="1.0"></td>
+                                    <td><input type="radio" name="req-rely" id="req-rely" value="0.84"></td>
+                                    <td><input type="radio" name="req-rely" id="req-rely" value="0.70"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">DATA</th>
+                                    <td><input type="radio" name="req-data" id="req-data" value="1.43"></td>
+                                    <td><input type="radio" name="req-data" id="req-data" value="1.2"></td>
+                                    <td><input type="radio" name="req-data" id="req-data" value="1.0"></td>
+                                    <td><input type="radio" name="req-data" id="req-data" value="0.84"></td>
+                                    <td><input type="radio" name="req-data" id="req-data" value="0.7"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">RUSE</th>
+                                    <td></td>
+                                    <td><input type="radio" name="req-ruse" id="req-ruse" value="0.95"></td>
+                                    <td><input type="radio" name="req-ruse" id="req-ruse" value="1.0"></td>
+                                    <td><input type="radio" name="req-ruse" id="req-ruse" value="1.02"></td>
+                                    <td><input type="radio" name="req-ruse" id="req-ruse" value="1.02"></td>
+                                    <td><input type="radio" name="req-ruse" id="req-ruse" value="1.05"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">DOCU</th>
+                                    <td><input type="radio" name="req-docu" id="req-docu" value="1.16"></td>
+                                    <td><input type="radio" name="req-docu" id="req-docu" value="1.08"></td>
+                                    <td><input type="radio" name="req-docu" id="req-docu" value="1.0"></td>
+                                    <td><input type="radio" name="req-docu" id="req-docu" value="0.93"></td>
+                                    <td><input type="radio" name="req-docu" id="req-docu" value="0.86"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">CPLX</th>
+                                    <td><input type="radio" name="req-cplx" id="req-cplx" value="0.76"></td>
+                                    <td><input type="radio" name="req-cplx" id="req-cplx" value="0.87"></td>
+                                    <td><input type="radio" name="req-cplx" id="req-cplx" value="1.0"></td>
+                                    <td><input type="radio" name="req-cplx" id="req-cplx" value="1.1"></td>
+                                    <td><input type="radio" name="req-cplx" id="req-cplx" value="1.15"></td>
+                                    <td><input type="radio" name="req-cplx" id="req-cplx" value="1.32"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">PREC</th>
+                                    <td><input type="radio" name="req-prec" id="req-prec" value="1.43"></td>
+                                    <td><input type="radio" name="req-prec" id="req-prec" value="1.2"></td>
+                                    <td><input type="radio" name="req-prec" id="req-prec" value="1.0"></td>
+                                    <td><input type="radio" name="req-prec" id="req-prec" value="0.70"></td>
+                                    <td><input type="radio" name="req-prec" id="req-prec" value="0.89"></td>
+                                    <td><input type="radio" name="req-prec" id="req-prec" value="0.84"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">TEAM</th>
+                                    <td><input type="radio" name="req-team" id="req-team" value="1.34"></td>
+                                    <td><input type="radio" name="req-team" id="req-team" value="1.16"></td>
+                                    <td><input type="radio" name="req-team" id="req-team" value="1.0"></td>
+                                    <td><input type="radio" name="req-team" id="req-team" value="0.91"></td>
+                                    <td><input type="radio" name="req-team" id="req-team" value="0.87"></td>
+                                    <td><input type="radio" name="req-team" id="req-team" value="0.75"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">RESL</th>
+                                    <td><input type="radio" name="req-resl" id="req-resl" value="1.32"></td>
+                                    <td><input type="radio" name="req-resl" id="req-resl" value="1.15"></td>
+                                    <td><input type="radio" name="req-resl" id="req-resl" value="1.0"></td>
+                                    <td><input type="radio" name="req-resl" id="req-resl" value="0.91"></td>
+                                    <td><input type="radio" name="req-resl" id="req-resl" value="0.87"></td>
+                                    <td><input type="radio" name="req-resl" id="req-resl" value="0.76"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">PMAT</th>
+                                    <td><input type="radio" name="req-pmat" id="req-pmat" value="1.38"></td>
+                                    <td><input type="radio" name="req-pmat" id="req-pmat" value="1.17"></td>
+                                    <td><input type="radio" name="req-pmat" id="req-pmat" value="1.0"></td>
+                                    <td><input type="radio" name="req-pmat" id="req-pmat" value="0.90"></td>
+                                    <td><input type="radio" name="req-pmat" id="req-pmat" value="0.85"></td>
+                                    <td><input type="radio" name="req-pmat" id="req-pmat" value="0.73"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="7"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Requirements DI Result</th>
+                                    <td colspan="6"><input class="form-control" type="text" name="req-result" id="req-result" value=""></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <hr>
+                    </div>
+                  </div>
+            </div>
+        </div> <!-- REQ. DI END-->
+
+        <!-- DES. DI START -->
+        <div class="row top-50">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                      Design
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Design</h5>
+                        <table class="table">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">DI Drivers</th>
+                                <th scope="col">Very Low</th>
+                                <th scope="col">Low</th>
+                                <th scope="col">Nominal</th>
+                                <th scope="col">High</th>
+                                <th scope="col">Very High</th>
+                                <th scope="col">Extra High</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">ACAP</th>
+                                    <td><input type="radio" name="des-acap" id="des-acap" value="1.20"></td>
+                                    <td><input type="radio" name="des-acap" id="des-acap" value="1.10"></td>
+                                    <td><input type="radio" name="des-acap" id="des-acap" value="1.0"></td>
+                                    <td><input type="radio" name="des-acap" id="des-acap" value="0.91"></td>
+                                    <td><input type="radio" name="des-acap" id="des-acap" value="0.83"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">PCAP</th>
+                                    <td><input type="radio" name="des-pcap" id="des-pcap" value="1.17"></td>
+                                    <td><input type="radio" name="des-pcap" id="des-pcap" value="1.08"></td>
+                                    <td><input type="radio" name="des-pcap" id="des-pcap" value="1.0"></td>
+                                    <td><input type="radio" name="des-pcap" id="des-pcap" value="0.92"></td>
+                                    <td><input type="radio" name="des-pcap" id="des-pcap" value="0.85"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">AEXP</th>
+                                    <td><input type="radio" name="des-aexp" id="des-aexp" value="1.22"></td>
+                                    <td><input type="radio" name="des-aexp" id="des-aexp" value="1.10"></td>
+                                    <td><input type="radio" name="des-aexp" id="des-aexp" value="1.0"></td>
+                                    <td><input type="radio" name="des-aexp" id="des-aexp" value="0.91"></td>
+                                    <td><input type="radio" name="des-aexp" id="des-aexp" value="0.82"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">PEXP</th>
+                                    <td><input type="radio" name="des-pexp" id="des-pexp" value="1.17"></td>
+                                    <td><input type="radio" name="des-pexp" id="des-pexp" value="1.08"></td>
+                                    <td><input type="radio" name="des-pexp" id="des-pexp" value="1.0"></td>
+                                    <td><input type="radio" name="des-pexp" id="des-pexp" value="0.93"></td>
+                                    <td><input type="radio" name="des-pexp" id="des-pexp" value="0.86"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">LTEX</th>
+                                    <td><input type="radio" name="des-ltex" id="des-ltex" value="1.13"></td>
+                                    <td><input type="radio" name="des-ltex" id="des-ltex" value="1.06"></td>
+                                    <td><input type="radio" name="des-ltex" id="des-ltex" value="1.0"></td>
+                                    <td><input type="radio" name="des-ltex" id="des-ltex" value="0.94"></td>
+                                    <td><input type="radio" name="des-ltex" id="des-ltex" value="0.88"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">PCON</th>
+                                    <td><input type="radio" name="des-pcon" id="des-pcon" value="1.25"></td>
+                                    <td><input type="radio" name="des-pcon" id="des-pcon" value="1.12"></td>
+                                    <td><input type="radio" name="des-pcon" id="des-pcon" value="1.0"></td>
+                                    <td><input type="radio" name="des-pcon" id="des-pcon" value="0.89"></td>
+                                    <td><input type="radio" name="des-pcon" id="des-pcon" value="0.80"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">TOOL</th>
+                                    <td><input type="radio" name="des-tool" id="des-tool" value="1.10"></td>
+                                    <td><input type="radio" name="des-tool" id="des-tool" value="1.05"></td>
+                                    <td><input type="radio" name="des-tool" id="des-tool" value="1.0"></td>
+                                    <td><input type="radio" name="des-tool" id="des-tool" value="0.95"></td>
+                                    <td><input type="radio" name="des-tool" id="des-tool" value="0.91"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">SITE</th>
+                                    <td><input type="radio" name="des-site" id="des-site" value="1.20"></td>
+                                    <td><input type="radio" name="des-site" id="des-site" value="1.10"></td>
+                                    <td><input type="radio" name="des-site" id="des-site" value="1.0"></td>
+                                    <td><input type="radio" name="des-site" id="des-site" value="0.94"></td>
+                                    <td><input type="radio" name="des-site" id="des-site" value="0.91"></td>
+                                    <td><input type="radio" name="des-site" id="des-site" value="0.83"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">SCED</th>
+                                    <td><input type="radio" name="des-sced" id="des-sced" value="1.19"></td>
+                                    <td><input type="radio" name="des-sced" id="des-sced" value="1.09"></td>
+                                    <td><input type="radio" name="des-sced" id="des-sced" value="1.0"></td>
+                                    <td><input type="radio" name="des-sced" id="des-sced" value="0.92"></td>
+                                    <td><input type="radio" name="des-sced" id="des-sced" value="0.84"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">TIME</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><input type="radio" name="des-time" id="des-time" value="1.0"></td>
+                                    <td><input type="radio" name="des-time" id="des-time" value="1.06"></td>
+                                    <td><input type="radio" name="des-time" id="des-time" value="1.10"></td>
+                                    <td><input type="radio" name="des-time" id="des-time" value="1.2"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">STOR</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><input type="radio" name="des-stor" id="des-stor" value="1.0"></td>
+                                    <td><input type="radio" name="des-stor" id="des-stor" value="1.06"></td>
+                                    <td><input type="radio" name="des-stor" id="des-stor" value="1.09"></td>
+                                    <td><input type="radio" name="des-stor" id="des-stor" value="1.18"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">PVOL</th>
+                                    <td></td>
+                                    <td><input type="radio" name="des-pvol" id="des-pvol" value="0.83"></td>
+                                    <td><input type="radio" name="des-pvol" id="des-pvol" value="1.0"></td>
+                                    <td><input type="radio" name="des-pvol" id="des-pvol" value="1.11"></td>
+                                    <td><input type="radio" name="des-pvol" id="des-pvol" value="1.20"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">RELY</th>
+                                    <td><input type="radio" name="des-rely" id="des-rely" value="1.45"></td>
+                                    <td><input type="radio" name="des-rely" id="des-rely" value="1.2"></td>
+                                    <td><input type="radio" name="des-rely" id="des-rely" value="1.0"></td>
+                                    <td><input type="radio" name="des-rely" id="des-rely" value="0.83"></td>
+                                    <td><input type="radio" name="des-rely" id="des-rely" value="0.69"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">DATA</th>
+                                    <td><input type="radio" name="des-data" id="des-data" value="1.45"></td>
+                                    <td><input type="radio" name="des-data" id="des-data" value="1.2"></td>
+                                    <td><input type="radio" name="des-data" id="des-data" value="1.0"></td>
+                                    <td><input type="radio" name="des-data" id="des-data" value="0.83"></td>
+                                    <td><input type="radio" name="des-data" id="des-data" value="0.69"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">RUSE</th>
+                                    <td></td>
+                                    <td><input type="radio" name="des-ruse" id="des-ruse" value="0.98"></td>
+                                    <td><input type="radio" name="des-ruse" id="des-ruse" value="1.0"></td>
+                                    <td><input type="radio" name="des-ruse" id="des-ruse" value="1.0"></td>
+                                    <td><input type="radio" name="des-ruse" id="des-ruse" value="1.02"></td>
+                                    <td><input type="radio" name="des-ruse" id="des-ruse" value="1.02"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">DOCU</th>
+                                    <td><input type="radio" name="des-docu" id="des-docu" value="1.18"></td>
+                                    <td><input type="radio" name="des-docu" id="des-docu" value="1.09"></td>
+                                    <td><input type="radio" name="des-docu" id="des-docu" value="1.0"></td>
+                                    <td><input type="radio" name="des-docu" id="des-docu" value="0.92"></td>
+                                    <td><input type="radio" name="des-docu" id="des-docu" value="0.85"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">CPLX</th>
+                                    <td><input type="radio" name="des-cplx" id="des-cplx" value="0.71"></td>
+                                    <td><input type="radio" name="des-cplx" id="des-cplx" value="0.84"></td>
+                                    <td><input type="radio" name="des-cplx" id="des-cplx" value="1.0"></td>
+                                    <td><input type="radio" name="des-cplx" id="des-cplx" value="1.12"></td>
+                                    <td><input type="radio" name="des-cplx" id="des-cplx" value="1.19"></td>
+                                    <td><input type="radio" name="des-cplx" id="des-cplx" value="1.41"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">PREC</th>
+                                    <td><input type="radio" name="des-prec" id="des-prec" value="1.34"></td>
+                                    <td><input type="radio" name="des-prec" id="des-prec" value="1.16"></td>
+                                    <td><input type="radio" name="des-prec" id="des-prec" value="1.0"></td>
+                                    <td><input type="radio" name="des-prec" id="des-prec" value="0.91"></td>
+                                    <td><input type="radio" name="des-prec" id="des-prec" value="0.87"></td>
+                                    <td><input type="radio" name="des-prec" id="des-prec" value="0.75"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">TEAM</th>
+                                    <td><input type="radio" name="des-team" id="des-team" value="1.26"></td>
+                                    <td><input type="radio" name="des-team" id="des-team" value="1.12"></td>
+                                    <td><input type="radio" name="des-team" id="des-team" value="1.0"></td>
+                                    <td><input type="radio" name="des-team" id="des-team" value="0.93"></td>
+                                    <td><input type="radio" name="des-team" id="des-team" value="0.9"></td>
+                                    <td><input type="radio" name="des-team" id="des-team" value="0.80"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">RESL</th>
+                                    <td><input type="radio" name="des-resl" id="des-resl" value="1.43"></td>
+                                    <td><input type="radio" name="des-resl" id="des-resl" value="1.2"></td>
+                                    <td><input type="radio" name="des-resl" id="des-resl" value="1.0"></td>
+                                    <td><input type="radio" name="des-resl" id="des-resl" value="0.89"></td>
+                                    <td><input type="radio" name="des-resl" id="des-resl" value="0.84"></td>
+                                    <td><input type="radio" name="des-resl" id="des-resl" value="0.70"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">PMAT</th>
+                                    <td><input type="radio" name="des-pmat" id="des-pmat" value="1.65"></td>
+                                    <td><input type="radio" name="des-pmat" id="des-pmat" value="1.28"></td>
+                                    <td><input type="radio" name="des-pmat" id="des-pmat" value="1.0"></td>
+                                    <td><input type="radio" name="des-pmat" id="des-pmat" value="0.85"></td>
+                                    <td><input type="radio" name="des-pmat" id="des-pmat" value="0.78"></td>
+                                    <td><input type="radio" name="des-pmat" id="des-pmat" value="0.61"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="7"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Design DI Result</th>
+                                    <td colspan="6"><input class="form-control" type="text" name="des-result" id="des-result" value=""></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                  </div>
+            </div>
+        </div> <!-- DES. DI END-->
+
+        <!-- COD. DI START -->
+        <div class="row top-50">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                      Coding
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Coding</h5>
+                        <table class="table">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">DI Drivers</th>
+                                <th scope="col">Very Low</th>
+                                <th scope="col">Low</th>
+                                <th scope="col">Nominal</th>
+                                <th scope="col">High</th>
+                                <th scope="col">Very High</th>
+                                <th scope="col">Extra High</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">ACAP</th>
+                                    <td><input type="radio" name="cod-acap" id="cod-acap" value="1.11"></td>
+                                    <td><input type="radio" name="cod-acap" id="cod-acap" value="1.05"></td>
+                                    <td><input type="radio" name="cod-acap" id="cod-acap" value="1.0"></td>
+                                    <td><input type="radio" name="cod-acap" id="cod-acap" value="0.95"></td>
+                                    <td><input type="radio" name="cod-acap" id="cod-acap" value="0.90"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">PCAP</th>
+                                    <td><input type="radio" name="cod-pcap" id="cod-pcap" value="1.32"></td>
+                                    <td><input type="radio" name="cod-pcap" id="cod-pcap" value="1.15"></td>
+                                    <td><input type="radio" name="cod-pcap" id="cod-pcap" value="1.0"></td>
+                                    <td><input type="radio" name="cod-pcap" id="cod-pcap" value="0.87"></td>
+                                    <td><input type="radio" name="cod-pcap" id="cod-pcap" value="0.76"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">AEXP</th>
+                                    <td><input type="radio" name="cod-aexp" id="cod-aexp" value="1.13"></td>
+                                    <td><input type="radio" name="cod-aexp" id="cod-aexp" value="1.06"></td>
+                                    <td><input type="radio" name="cod-aexp" id="cod-aexp" value="1.0"></td>
+                                    <td><input type="radio" name="cod-aexp" id="cod-aexp" value="0.94"></td>
+                                    <td><input type="radio" name="cod-aexp" id="cod-aexp" value="0.88"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">PEXP</th>
+                                    <td><input type="radio" name="cod-pexp" id="cod-pexp" value="1.16"></td>
+                                    <td><input type="radio" name="cod-pexp" id="cod-pexp" value="1.08"></td>
+                                    <td><input type="radio" name="cod-pexp" id="cod-pexp" value="1.0"></td>
+                                    <td><input type="radio" name="cod-pexp" id="cod-pexp" value="0.93"></td>
+                                    <td><input type="radio" name="cod-pexp" id="cod-pexp" value="0.86"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">LTEX</th>
+                                    <td><input type="radio" name="cod-ltex" id="cod-ltex" value="1.22"></td>
+                                    <td><input type="radio" name="cod-ltex" id="cod-ltex" value="1.10"></td>
+                                    <td><input type="radio" name="cod-ltex" id="cod-ltex" value="1.0"></td>
+                                    <td><input type="radio" name="cod-ltex" id="cod-ltex" value="0.91"></td>
+                                    <td><input type="radio" name="cod-ltex" id="cod-ltex" value="0.82"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">PCON</th>
+                                    <td><input type="radio" name="cod-pcon" id="cod-pcon" value="1.30"></td>
+                                    <td><input type="radio" name="cod-pcon" id="cod-pcon" value="1.14"></td>
+                                    <td><input type="radio" name="cod-pcon" id="cod-pcon" value="1.0"></td>
+                                    <td><input type="radio" name="cod-pcon" id="cod-pcon" value="0.88"></td>
+                                    <td><input type="radio" name="cod-pcon" id="cod-pcon" value="0.77"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">TOOL</th>
+                                    <td><input type="radio" name="cod-tool" id="cod-tool" value="1.25"></td>
+                                    <td><input type="radio" name="cod-tool" id="cod-tool" value="1.12"></td>
+                                    <td><input type="radio" name="cod-tool" id="cod-tool" value="1.0"></td>
+                                    <td><input type="radio" name="cod-tool" id="cod-tool" value="0.89"></td>
+                                    <td><input type="radio" name="cod-tool" id="cod-tool" value="0.80"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">SITE</th>
+                                    <td><input type="radio" name="cod-site" id="cod-site" value="1.18"></td>
+                                    <td><input type="radio" name="cod-site" id="cod-site" value="1.09"></td>
+                                    <td><input type="radio" name="cod-site" id="cod-site" value="1.0"></td>
+                                    <td><input type="radio" name="cod-site" id="cod-site" value="0.95"></td>
+                                    <td><input type="radio" name="cod-site" id="cod-site" value="0.92"></td>
+                                    <td><input type="radio" name="cod-site" id="cod-site" value="0.85"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">SCED</th>
+                                    <td><input type="radio" name="cod-sced" id="cod-sced" value="1.19"></td>
+                                    <td><input type="radio" name="cod-sced" id="cod-sced" value="1.09"></td>
+                                    <td><input type="radio" name="cod-sced" id="cod-sced" value="1.0"></td>
+                                    <td><input type="radio" name="cod-sced" id="cod-sced" value="0.92"></td>
+                                    <td><input type="radio" name="cod-sced" id="cod-sced" value="0.84"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">TIME</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><input type="radio" name="cod-time" id="cod-time" value="1.0"></td>
+                                    <td><input type="radio" name="cod-time" id="cod-time" value="1.06"></td>
+                                    <td><input type="radio" name="cod-time" id="cod-time" value="1.10"></td>
+                                    <td><input type="radio" name="cod-time" id="cod-time" value="1.2"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">STOR</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><input type="radio" name="cod-stor" id="cod-stor" value="1.0"></td>
+                                    <td><input type="radio" name="cod-stor" id="cod-stor" value="1.05"></td>
+                                    <td><input type="radio" name="cod-stor" id="cod-stor" value="1.07"></td>
+                                    <td><input type="radio" name="cod-stor" id="cod-stor" value="1.15"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">PVOL</th>
+                                    <td></td>
+                                    <td><input type="radio" name="cod-pvol" id="cod-pvol" value="0.82"></td>
+                                    <td><input type="radio" name="cod-pvol" id="cod-pvol" value="1.0"></td>
+                                    <td><input type="radio" name="cod-pvol" id="cod-pvol" value="1.10"></td>
+                                    <td><input type="radio" name="cod-pvol" id="cod-pvol" value="1.22"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">RELY</th>
+                                    <td><input type="radio" name="cod-rely" id="cod-rely" value="1.45"></td>
+                                    <td><input type="radio" name="cod-rely" id="cod-rely" value="1.2"></td>
+                                    <td><input type="radio" name="cod-rely" id="cod-rely" value="1.0"></td>
+                                    <td><input type="radio" name="cod-rely" id="cod-rely" value="0.83"></td>
+                                    <td><input type="radio" name="cod-rely" id="cod-rely" value="0.69"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">DATA</th>
+                                    <td><input type="radio" name="cod-data" id="cod-data" value="1.45"></td>
+                                    <td><input type="radio" name="cod-data" id="cod-data" value="1.2"></td>
+                                    <td><input type="radio" name="cod-data" id="cod-data" value="1.0"></td>
+                                    <td><input type="radio" name="cod-data" id="cod-data" value="0.83"></td>
+                                    <td><input type="radio" name="cod-data" id="cod-data" value="0.69"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">RUSE</th>
+                                    <td></td>
+                                    <td><input type="radio" name="cod-ruse" id="cod-ruse" value="0.98"></td>
+                                    <td><input type="radio" name="cod-ruse" id="cod-ruse" value="1.0"></td>
+                                    <td><input type="radio" name="cod-ruse" id="cod-ruse" value="1.0"></td>
+                                    <td><input type="radio" name="cod-ruse" id="cod-ruse" value="1.0"></td>
+                                    <td><input type="radio" name="cod-ruse" id="cod-ruse" value="1.02"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">DOCU</th>
+                                    <td><input type="radio" name="cod-docu" id="cod-docu" value="1.18"></td>
+                                    <td><input type="radio" name="cod-docu" id="cod-docu" value="1.09"></td>
+                                    <td><input type="radio" name="cod-docu" id="cod-docu" value="1.0"></td>
+                                    <td><input type="radio" name="cod-docu" id="cod-docu" value="0.92"></td>
+                                    <td><input type="radio" name="cod-docu" id="cod-docu" value="0.85"></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">CPLX</th>
+                                    <td><input type="radio" name="cod-cplx" id="cod-cplx" value="0.71"></td>
+                                    <td><input type="radio" name="cod-cplx" id="cod-cplx" value="0.84"></td>
+                                    <td><input type="radio" name="cod-cplx" id="cod-cplx" value="1.0"></td>
+                                    <td><input type="radio" name="cod-cplx" id="cod-cplx" value="1.12"></td>
+                                    <td><input type="radio" name="cod-cplx" id="cod-cplx" value="1.19"></td>
+                                    <td><input type="radio" name="cod-cplx" id="cod-cplx" value="1.41"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">PREC</th>
+                                    <td><input type="radio" name="cod-prec" id="cod-prec" value="1.24"></td>
+                                    <td><input type="radio" name="cod-prec" id="cod-prec" value="1.11"></td>
+                                    <td><input type="radio" name="cod-prec" id="cod-prec" value="1.0"></td>
+                                    <td><input type="radio" name="cod-prec" id="cod-prec" value="0.93"></td>
+                                    <td><input type="radio" name="cod-prec" id="cod-prec" value="0.9"></td>
+                                    <td><input type="radio" name="cod-prec" id="cod-prec" value="0.81"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">TEAM</th>
+                                    <td><input type="radio" name="cod-team" id="cod-team" value="1.18"></td>
+                                    <td><input type="radio" name="cod-team" id="cod-team" value="1.09"></td>
+                                    <td><input type="radio" name="cod-team" id="cod-team" value="1.0"></td>
+                                    <td><input type="radio" name="cod-team" id="cod-team" value="0.95"></td>
+                                    <td><input type="radio" name="cod-team" id="cod-team" value="0.92"></td>
+                                    <td><input type="radio" name="cod-team" id="cod-team" value="0.85"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">RESL</th>
+                                    <td><input type="radio" name="cod-resl" id="cod-resl" value="1.41"></td>
+                                    <td><input type="radio" name="cod-resl" id="cod-resl" value="1.19"></td>
+                                    <td><input type="radio" name="cod-resl" id="cod-resl" value="1.0"></td>
+                                    <td><input type="radio" name="cod-resl" id="cod-resl" value="0.89"></td>
+                                    <td><input type="radio" name="cod-resl" id="cod-resl" value="0.84"></td>
+                                    <td><input type="radio" name="cod-resl" id="cod-resl" value="0.71"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">PMAT</th>
+                                    <td><input type="radio" name="cod-pmat" id="cod-pmat" value="1.58"></td>
+                                    <td><input type="radio" name="cod-pmat" id="cod-pmat" value="1.26"></td>
+                                    <td><input type="radio" name="cod-pmat" id="cod-pmat" value="1.0"></td>
+                                    <td><input type="radio" name="cod-pmat" id="cod-pmat" value="0.86"></td>
+                                    <td><input type="radio" name="cod-pmat" id="cod-pmat" value="0.79"></td>
+                                    <td><input type="radio" name="cod-pmat" id="cod-pmat" value="0.63"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="7"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Coding DI Result</th>
+                                    <td colspan="6"><input class="form-control" type="text" name="cod-result" id="cod-result" value=""></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                  </div>
+            </div>
+        </div> <!-- COD. DI END-->
+    </div>
 </body>
 </html>
