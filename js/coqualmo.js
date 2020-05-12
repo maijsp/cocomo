@@ -1,9 +1,12 @@
 var input_kloc = document.getElementById('kloc')
 console.log(input_kloc)
 input_kloc.addEventListener('change', () => {
-    calculateReq()
-    calculateDesign()
-    calculateCoding()
+    var total_req = calculateReq()
+    var total_des = calculateDesign()
+    var total_cod = calculateCoding()
+
+    var total = document.getElementById('total')
+    total.innerHTML = total_req + total_des + total_cod
 })
 
 function calculateReq(){
@@ -37,6 +40,7 @@ function calculateReq(){
     var Sum1 = A * (KLOC)**B * TotalDireq
     console.log(Sum1)
     document.getElementById('req-result').value = Sum1.toFixed(2)
+    return Sum1
 }
 
 function calculateDesign()
@@ -71,6 +75,7 @@ function calculateDesign()
     var Sum2 = A2 * (KLOC)**B2 * TotalDireq
     console.log(Sum2)
     document.getElementById('des-result').value = Sum2.toFixed(2)
+    return Sum2
 }
 
 function calculateCoding()  {
@@ -107,4 +112,5 @@ function calculateCoding()  {
     console.log(QAF)
     var DIcode = parseFloat((A * ((kloc) ** 1) * QAF).toFixed(2))
     document.querySelector('input[name="cod-result"]').value = DIcode
+    return DIcode
 }
