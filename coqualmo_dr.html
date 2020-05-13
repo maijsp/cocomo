@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/calculator.css">
+    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>COQUALMO Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>COQUALMO DR Calculator</h1>
+        </div>
+
+
+        <!-- REQ START -->
+        <div class="row">
+            <div class="card">
+                <div class="card-header">
+                <h5>Requirement</h5>
+                </div>
+                <div class="card-body">
+                <h6 class="card-title">REQUIREMENT</h6>
+                <div class="container">
+                    <div class="row">
+                            <div class="col">
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                    
+                                    <h5 class="card-title"><input type="radio" name="req-type" value="auto"> Automated Analysis DRF</h5>
+                                    <p class="card-text">Please select value below:</p>
+                                    <p><input type="radio" name="req-auto-val" value="0.00"> Very Low</p>
+                                    <p><input type="radio" name="req-auto-val" value="0.00"> Low</p>
+                                    <p><input type="radio" name="req-auto-val" value="0.10"> Nominal</p>
+                                    <p><input type="radio" name="req-auto-val" value="0.27"> High</p>
+                                    <p><input type="radio" name="req-auto-val" value="0.34"> Very High</p>
+                                    <p><input type="radio" name="req-auto-val" value="0.40"> Extra High</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                    <h5 class="card-title"><input type="radio" name="req-type" value="revi"> People Reviews DRF</h5>
+                                    <p class="card-text">Please select value below:</p>
+                                    <p><input type="radio" name="req-revi-val" value="0.00"> Very Low</p>
+                                    <p><input type="radio" name="req-revi-val" value="0.25"> Low</p>
+                                    <p><input type="radio" name="req-revi-val" value="0.40"> Nominal</p>
+                                    <p><input type="radio" name="req-revi-val" value="0.50"> High</p>
+                                    <p><input type="radio" name="req-revi-val" value="0.58"> Very High</p>
+                                    <p><input type="radio" name="req-revi-val" value="0.70"> Extra High</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                    <h5 class="card-title"><input type="radio" name="req-type" value="tool"> Execution Testing and Tools DRF</h5>
+                                    <p class="card-text">Please select value below:</p>
+                                    <p><input type="radio" name="req-tool-val" value="0.00"> Very Low</p>
+                                    <p><input type="radio" name="req-tool-val" value="0.23"> Low</p>
+                                    <p><input type="radio" name="req-tool-val" value="0.40"> Nominal</p>
+                                    <p><input type="radio" name="req-tool-val" value="0.50"> High</p>
+                                    <p><input type="radio" name="req-tool-val" value="0.57"> Very High</p>
+                                    <p><input type="radio" name="req-tool-val" value="0.60"> Extra High</p>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- REQ END -->
+
+        <!-- DES START -->
+        <div class="row top-50">
+            <div class="card">
+                <div class="card-header">
+                <h5>Design</h5>
+                </div>
+                <div class="card-body">
+                <h6 class="card-title">DESIGN</h6>
+                <div class="container">
+                    <div class="row">
+                            <div class="col">
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                    
+                                    <h5 class="card-title"><input type="radio" name="des-type" value="auto"> Automated Analysis DRF</h5>
+                                    <p class="card-text">Please select value below:</p>
+                                    <p><input type="radio" name="des-auto-val" value="0.00"> Very Low</p>
+                                    <p><input type="radio" name="des-auto-val" value="0.00"> Low</p>
+                                    <p><input type="radio" name="des-auto-val" value="0.13"> Nominal</p>
+                                    <p><input type="radio" name="des-auto-val" value="0.28"> High</p>
+                                    <p><input type="radio" name="des-auto-val" value="0.44"> Very High</p>
+                                    <p><input type="radio" name="des-auto-val" value="0.50"> Extra High</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                    <h5 class="card-title"><input type="radio" name="des-type" value="revi"> People Reviews DRF</h5>
+                                    <p class="card-text">Please select value below:</p>
+                                    <p><input type="radio" name="des-revi-val" value="0.00"> Very Low</p>
+                                    <p><input type="radio" name="des-revi-val" value="0.28"> Low</p>
+                                    <p><input type="radio" name="des-revi-val" value="0.40"> Nominal</p>
+                                    <p><input type="radio" name="des-revi-val" value="0.54"> High</p>
+                                    <p><input type="radio" name="des-revi-val" value="0.70"> Very High</p>
+                                    <p><input type="radio" name="des-revi-val" value="0.78"> Extra High</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                    <h5 class="card-title"><input type="radio" name="des-type" value="tool"> Execution Testing and Tools DRF</h5>
+                                    <p class="card-text">Please select value below:</p>
+                                    <p><input type="radio" name="des-tool-val" value="0.00"> Very Low</p>
+                                    <p><input type="radio" name="des-tool-val" value="0.23"> Low</p>
+                                    <p><input type="radio" name="des-tool-val" value="0.43"> Nominal</p>
+                                    <p><input type="radio" name="des-tool-val" value="0.54"> High</p>
+                                    <p><input type="radio" name="des-tool-val" value="0.65"> Very High</p>
+                                    <p><input type="radio" name="des-tool-val" value="0.70"> Extra High</p>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- DES END -->
+
+        <!-- COD START -->
+        <div class="row top-50">
+            <div class="card">
+                <div class="card-header">
+                <h5>Coding</h5>
+                </div>
+                <div class="card-body">
+                <h6 class="card-title">CODING</h6>
+                <div class="container">
+                    <div class="row">
+                            <div class="col">
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                    
+                                    <h5 class="card-title"><input type="radio" name="cod-type" value="auto"> Automated Analysis DRF</h5>
+                                    <p class="card-text">Please select value below:</p>
+                                    <p><input type="radio" name="cod-auto-val" value="0.00"> Very Low</p>
+                                    <p><input type="radio" name="cod-auto-val" value="0.10"> Low</p>
+                                    <p><input type="radio" name="cod-auto-val" value="0.20"> Nominal</p>
+                                    <p><input type="radio" name="cod-auto-val" value="0.30"> High</p>
+                                    <p><input type="radio" name="cod-auto-val" value="0.48"> Very High</p>
+                                    <p><input type="radio" name="cod-auto-val" value="0.55"> Extra High</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                    <h5 class="card-title"><input type="radio" name="cod-type" value="revi"> People Reviews DRF</h5>
+                                    <p class="card-text">Please select value below:</p>
+                                    <p><input type="radio" name="cod-revi-val" value="0.00"> Very Low</p>
+                                    <p><input type="radio" name="cod-revi-val" value="0.30"> Low</p>
+                                    <p><input type="radio" name="cod-revi-val" value="0.48"> Nominal</p>
+                                    <p><input type="radio" name="cod-revi-val" value="0.60"> High</p>
+                                    <p><input type="radio" name="cod-revi-val" value="0.73"> Very High</p>
+                                    <p><input type="radio" name="cod-revi-val" value="0.83"> Extra High</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                    <h5 class="card-title"><input type="radio" name="cod-type" value="tool"> Execution Testing and Tools DRF</h5>
+                                    <p class="card-text">Please select value below:</p>
+                                    <p><input type="radio" name="cod-tool-val" value="0.00"> Very Low</p>
+                                    <p><input type="radio" name="cod-tool-val" value="0.38"> Low</p>
+                                    <p><input type="radio" name="cod-tool-val" value="0.58"> Nominal</p>
+                                    <p><input type="radio" name="cod-tool-val" value="0.69"> High</p>
+                                    <p><input type="radio" name="cod-tool-val" value="0.78"> Very High</p>
+                                    <p><input type="radio" name="cod-tool-val" value="0.88"> Extra High</p>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- COD END -->
+
+        
+    </div>
+    <script src="js/coqualmo.js"></script>
+</body>
+</html>
