@@ -1,22 +1,3 @@
-// var html = "<table>";
-// for(var i = 0; i <)
-//     html+="<tr><th>A</th></tr>"
-//     html+="<tr><th>B</th></tr>"
-//     html+="<tr><th>A</th></tr>"
-//     html+="<tr><th>B</th></tr>"
-// for (var i = 0; i < rows.length; i++) {
-//     html+="<tr>";
-//     html+="<td>"+rows[i].name+"</td>";
-//     html+="<td>"+rows[i].age+"</td>";
-//     html+="<td>"+rows[i].email+"</td>";
-//     html+="</tr>";
-
-// }
-// html+="</table>";
-// document.getElementById("results").innerHTML = html;
-// document.getElementById("results").className = "table";
-
-
 var results = [{
     projecttype: "Organic",
     a: 2.4,

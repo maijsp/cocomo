@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <div class="row">
-            <h1>COQUALMO Calculator</h1>
+            <h1>COQUALMO Defect Introduction Calculator</h1>
         </div>
         
         <!-- KLOC CARD START -->
@@ -39,10 +39,9 @@
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                      Requirement
+                      <h5 class="card-title">Requirement</h5>
                     </div>
                     <div class="card-body">
-                      <h5 class="card-title">Requirement</h5>
                         <table class="table">
                             <thead class="thead-dark">
                             <tr>
@@ -265,10 +264,9 @@
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                      Design
+                      <h5 class="card-title">Design</h5>
                     </div>
                     <div class="card-body">
-                      <h5 class="card-title">Design</h5>
                         <table class="table">
                             <thead class="thead-dark">
                             <tr>
@@ -490,10 +488,9 @@
             <div class="col">
                 <div class="card">
                     <div class="card-header">
-                      Coding
+                      <h5 class="card-title">Coding</h5>
                     </div>
                     <div class="card-body">
-                      <h5 class="card-title">Coding</h5>
                         <table class="table">
                             <thead class="thead-dark">
                             <tr>
@@ -718,8 +715,212 @@
               <h6 class="card-title">Total number of defects introduced </h6>
               <p id="total" class="card-text"></p>
             </div>
-          </div>
-    </div>
+        </div>
+    </div> <!-- DEFECT REMOVAL  -->
+        <div class="container">
+            <div class="row">
+                <h1>COQUALMO Defect Removal Calculator</h1>
+            </div>
+            <!-- REQ START -->
+            <div class="row">
+                <div class="card">
+                    <div class="card-header">
+                    <h5>Requirement</h5>
+                    </div>
+                    <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+                                <div class="col">
+                                    <div class="card" style="width: 18rem;">
+                                        <div class="card-body">
+                                        <h5 class="card-title">Automated Analysis DRF</h5>
+                                        <p class="card-text">Please select value below:</p>
+                                        <p><input type="radio" name="req-auto-val" value="0.00"> Very Low</p>
+                                        <p><input type="radio" name="req-auto-val" value="0.00"> Low</p>
+                                        <p><input type="radio" name="req-auto-val" value="0.10" checked> Nominal</p>
+                                        <p><input type="radio" name="req-auto-val" value="0.27"> High</p>
+                                        <p><input type="radio" name="req-auto-val" value="0.34"> Very High</p>
+                                        <p><input type="radio" name="req-auto-val" value="0.40"> Extra High</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card" style="width: 18rem;">
+                                        <div class="card-body">
+                                        <h5 class="card-title">People Reviews DRF</h5>
+                                        <p class="card-text">Please select value below:</p>
+                                        <p><input type="radio" name="req-revi-val" value="0.00"> Very Low</p>
+                                        <p><input type="radio" name="req-revi-val" value="0.25"> Low</p>
+                                        <p><input type="radio" name="req-revi-val" value="0.40"checked> Nominal</p>
+                                        <p><input type="radio" name="req-revi-val" value="0.50"> High</p>
+                                        <p><input type="radio" name="req-revi-val" value="0.58"> Very High</p>
+                                        <p><input type="radio" name="req-revi-val" value="0.70"> Extra High</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card" style="width: 18rem;">
+                                        <div class="card-body">
+                                        <h5 class="card-title">Execution Testing and Tools DRF</h5>
+                                        <p class="card-text">Please select value below:</p>
+                                        <p><input type="radio" name="req-tool-val" value="0.00"> Very Low</p>
+                                        <p><input type="radio" name="req-tool-val" value="0.23"> Low</p>
+                                        <p><input type="radio" name="req-tool-val" value="0.40"checked> Nominal</p>
+                                        <p><input type="radio" name="req-tool-val" value="0.50"> High</p>
+                                        <p><input type="radio" name="req-tool-val" value="0.57"> Very High</p>
+                                        <p><input type="radio" name="req-tool-val" value="0.60"> Extra High</p>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                          <h5>Defect Residual estimation for artifact type requirement</h5>
+                        </div>
+                        <div class="card-body">
+                          <h6 class="card-title">Estimated number  of residual defects for requirements : </h6>
+                          <p id="total-req" class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- REQ END -->
+    
+            <!-- DES START -->
+            <div class="row top-50">
+                <div class="card">
+                    <div class="card-header">
+                    <h5>Design</h5>
+                    </div>
+                    <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+                                <div class="col">
+                                    <div class="card" style="width: 18rem;">
+                                        <div class="card-body">
+                                        <h5 class="card-title">Automated Analysis DRF</h5>
+                                        <p class="card-text">Please select value below:</p>
+                                        <p><input type="radio" name="des-auto-val" value="0.00"> Very Low</p>
+                                        <p><input type="radio" name="des-auto-val" value="0.00"> Low</p>
+                                        <p><input type="radio" name="des-auto-val" value="0.13" checked> Nominal</p>
+                                        <p><input type="radio" name="des-auto-val" value="0.28"> High</p>
+                                        <p><input type="radio" name="des-auto-val" value="0.44"> Very High</p>
+                                        <p><input type="radio" name="des-auto-val" value="0.50"> Extra High</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card" style="width: 18rem;">
+                                        <div class="card-body">
+                                        <h5 class="card-title">People Reviews DRF</h5>
+                                        <p class="card-text">Please select value below:</p>
+                                        <p><input type="radio" name="des-revi-val" value="0.00"> Very Low</p>
+                                        <p><input type="radio" name="des-revi-val" value="0.28"> Low</p>
+                                        <p><input type="radio" name="des-revi-val" value="0.40" checked> Nominal</p>
+                                        <p><input type="radio" name="des-revi-val" value="0.54"> High</p>
+                                        <p><input type="radio" name="des-revi-val" value="0.70"> Very High</p>
+                                        <p><input type="radio" name="des-revi-val" value="0.78"> Extra High</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card" style="width: 18rem;">
+                                        <div class="card-body">
+                                        <h5 class="card-title">Execution Testing and Tools DRF</h5>
+                                        <p class="card-text">Please select value below:</p>
+                                        <p><input type="radio" name="des-tool-val" value="0.00"> Very Low</p>
+                                        <p><input type="radio" name="des-tool-val" value="0.23"> Low</p>
+                                        <p><input type="radio" name="des-tool-val" value="0.43" checked> Nominal</p>
+                                        <p><input type="radio" name="des-tool-val" value="0.54"> High</p>
+                                        <p><input type="radio" name="des-tool-val" value="0.65"> Very High</p>
+                                        <p><input type="radio" name="des-tool-val" value="0.70"> Extra High</p>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                          <h5>Defect Residual estimation for artifact type design</h5>
+                        </div>
+                        <div class="card-body">
+                          <h6 class="card-title">Estimated number  of residual defects for design : </h6>
+                          <p id="total-des" class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- DES END -->
+    
+            <!-- COD START -->
+            <div class="row top-50">
+                <div class="card">
+                    <div class="card-header">
+                    <h5>Coding</h5>
+                    </div>
+                    <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+                                <div class="col">
+                                    <div class="card" style="width: 18rem;">
+                                        <div class="card-body">
+                                        <h5 class="card-title">Automated Analysis DRF</h5>
+                                        <p class="card-text">Please select value below:</p>
+                                        <p><input type="radio" name="cod-auto-val" value="0.00"> Very Low</p>
+                                        <p><input type="radio" name="cod-auto-val" value="0.10"> Low</p>
+                                        <p><input type="radio" name="cod-auto-val" value="0.20"checked> Nominal</p>
+                                        <p><input type="radio" name="cod-auto-val" value="0.30"> High</p>
+                                        <p><input type="radio" name="cod-auto-val" value="0.48"> Very High</p>
+                                        <p><input type="radio" name="cod-auto-val" value="0.55"> Extra High</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card" style="width: 18rem;">
+                                        <div class="card-body">
+                                        <h5 class="card-title">People Reviews DRF</h5>
+                                        <p class="card-text">Please select value below:</p>
+                                        <p><input type="radio" name="cod-revi-val" value="0.00"> Very Low</p>
+                                        <p><input type="radio" name="cod-revi-val" value="0.30"> Low</p>
+                                        <p><input type="radio" name="cod-revi-val" value="0.48"checked> Nominal</p>
+                                        <p><input type="radio" name="cod-revi-val" value="0.60"> High</p>
+                                        <p><input type="radio" name="cod-revi-val" value="0.73"> Very High</p>
+                                        <p><input type="radio" name="cod-revi-val" value="0.83"> Extra High</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card" style="width: 18rem;">
+                                        <div class="card-body">
+                                        <h5 class="card-title">Execution Testing and Tools DRF</h5>
+                                        <p class="card-text">Please select value below:</p>
+                                        <p><input type="radio" name="cod-tool-val" value="0.00"> Very Low</p>
+                                        <p><input type="radio" name="cod-tool-val" value="0.38"> Low</p>
+                                        <p><input type="radio" name="cod-tool-val" value="0.58"checked> Nominal</p>
+                                        <p><input type="radio" name="cod-tool-val" value="0.69"> High</p>
+                                        <p><input type="radio" name="cod-tool-val" value="0.78"> Very High</p>
+                                        <p><input type="radio" name="cod-tool-val" value="0.88"> Extra High</p>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                          <h5>Defect Residual estimation for artifact type coding</h5>
+                        </div>
+                        <div class="card-body">
+                          <h6 class="card-title">Estimated number  of residual defects for coding : </h6>
+                          <p id="total-cod" class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- COD END -->
+        </div> <!-- Container End -->
     <script src="js/coqualmo.js"></script>
 </body>
 </html>

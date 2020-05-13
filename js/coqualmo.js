@@ -1,12 +1,17 @@
 var calculate = document.querySelector('button[name="Calculate"]')
-console.log(calculate)
 calculate.addEventListener('click', () => {
     var total_req = calculateReq()
     var total_des = calculateDesign()
     var total_cod = calculateCoding()
 
-    var total = document.getElementById('total')
+    // display total defects introduced 
+    var total = document.getElementById('total')    
     total.innerText = parseFloat(total_req + total_des + total_cod)
+
+    // calculate for  Defect Removal Model
+    calculateDResReq(total_req)
+    calculateDResDes(total_des)
+    calculateDResCod(total_cod)
 })
 
 function calculateReq(){
@@ -113,4 +118,58 @@ function calculateCoding()  {
     var DIcode = parseFloat((A * ((kloc) ** 1) * QAF).toFixed(2))
     document.querySelector('input[name="cod-result"]').value = DIcode.toFixed(2)
     return DIcode
+}
+
+function calculateDResReq(DIestimated) {
+    var Cj = 1 // just for stimulating, don't know the exact value yet
+
+    // Get level of each profile ( total 3 profiles)
+    var AUTO = parseFloat(document.querySelector('input[name="req-auto-val"]:checked').value)
+    var REVIEW = parseFloat(document.querySelector('input[name="req-revi-val"]:checked').value)
+    var TOOL = parseFloat(document.querySelector('input[name="req-tool-val"]:checked').value)
+    // console.log('Auto' + AUTO + 'Review' + REVIEW + 'Tool' + TOOL)
+
+    // Calculate the DRes for artifact type requirement
+    var multiplicative = (1 - AUTO) * (1 - REVIEW) * (1 - TOOL)
+    var result = (Cj * DIestimated * multiplicative)
+
+    console.log(result)
+    // print result to id => total-req
+    document.getElementById('total-req').innerText = result.toFixed(2)
+}
+
+function calculateDResDes(DIestimated) {
+    var Cj = 1 // just for stimulating, don't know the exact value yet
+
+    // Get level of each profile ( total 3 profiles)
+    var AUTO = parseFloat(document.querySelector('input[name="des-auto-val"]:checked').value)
+    var REVIEW = parseFloat(document.querySelector('input[name="des-revi-val"]:checked').value)
+    var TOOL = parseFloat(document.querySelector('input[name="des-tool-val"]:checked').value)
+    // console.log('Auto' + AUTO + 'Review' + REVIEW + 'Tool' + TOOL)
+
+    // Calculate the DRes for artifact type desgin
+    var multiplicative = (1 - AUTO) * (1 - REVIEW) * (1 - TOOL)
+    var result = (Cj * DIestimated * multiplicative)
+
+    console.log(result)
+    // print result to id => total-des
+    document.getElementById('total-des').innerText = result.toFixed(2)
+}
+
+function calculateDResCod(DIestimated) {
+    var Cj = 1 // just for stimulating, don't know the exact value yet
+
+    // Get level of each profile ( total 3 profiles)
+    var AUTO = parseFloat(document.querySelector('input[name="cod-auto-val"]:checked').value)
+    var REVIEW = parseFloat(document.querySelector('input[name="cod-revi-val"]:checked').value)
+    var TOOL = parseFloat(document.querySelector('input[name="cod-tool-val"]:checked').value)
+    // console.log('Auto' + AUTO + 'Review' + REVIEW + 'Tool' + TOOL)
+
+    // Calculate the DRes for artifact type coding
+    var multiplicative = (1 - AUTO) * (1 - REVIEW) * (1 - TOOL)
+    var result = (Cj * DIestimated * multiplicative)
+
+    console.log(result)
+    // print result to id => total-cod
+    document.getElementById('total-cod').innerText = result.toFixed(2)
 }
