@@ -21,7 +21,7 @@
                       Size
                     </div>
                     <div class="card-body">
-                      <h5 class="card-title">Input KLOC</h5>
+                        <h5 class="card-title">Input KLOC</h5>
                         <div class="input-group">
                             <div class="input-group-prepend">
                             <div class="input-group-text">Size</div>
@@ -42,6 +42,18 @@
                       <h5 class="card-title">Requirement</h5>
                     </div>
                     <div class="card-body">
+                        <div class="input-group margin">
+                            <div class="input-group-prepend">
+                            <div class="input-group-text">A</div>
+                            </div>
+                            <input type="number" class="form-control" id="req-A" placeholder="A" value="2.5">
+                        </div>
+                        <div class="input-group margin">
+                            <div class="input-group-prepend">
+                            <div class="input-group-text">B</div>
+                            </div>
+                            <input type="number" class="form-control" id="req-B" placeholder="B" value="1">
+                        </div>
                         <table class="table">
                             <thead class="thead-dark">
                             <tr>
@@ -267,6 +279,18 @@
                       <h5 class="card-title">Design</h5>
                     </div>
                     <div class="card-body">
+                        <div class="input-group margin">
+                            <div class="input-group-prepend">
+                            <div class="input-group-text">A</div>
+                            </div>
+                            <input type="number" class="form-control" id="des-A" placeholder="A" value="2.5">
+                        </div>
+                        <div class="input-group margin">
+                            <div class="input-group-prepend">
+                            <div class="input-group-text">B</div>
+                            </div>
+                            <input type="number" class="form-control" id="des-B" placeholder="B" value="1">
+                        </div>
                         <table class="table">
                             <thead class="thead-dark">
                             <tr>
@@ -491,6 +515,18 @@
                       <h5 class="card-title">Coding</h5>
                     </div>
                     <div class="card-body">
+                        <div class="input-group margin">
+                            <div class="input-group-prepend">
+                            <div class="input-group-text">A</div>
+                            </div>
+                            <input type="number" class="form-control" id="cod-A" placeholder="A" value="2.5">
+                        </div>
+                        <div class="input-group margin">
+                            <div class="input-group-prepend">
+                            <div class="input-group-text">B</div>
+                            </div>
+                            <input type="number" class="form-control" id="cod-B" placeholder="B" value="1">
+                        </div>
                         <table class="table">
                             <thead class="thead-dark">
                             <tr>
@@ -720,15 +756,25 @@
         <div class="container">
             <div class="row">
                 <h1>COQUALMO Defect Removal Calculator</h1>
+                <h4>The calculator already has your number of Defect Introduction</h4>
             </div>
             <!-- REQ START -->
             <div class="row">
                 <div class="card">
                     <div class="card-header">
-                    <h5>Requirement</h5>
+                        <h5>Requirement</h5>
                     </div>
                     <div class="card-body">
                     <div class="container">
+                        <div class="row"> 
+                            <div class="input-group margin">
+                                <div class="input-group-prepend">
+                                <div class="input-group-text">Size</div>
+                                </div>
+                                <input type="text" class="form-control" id="req-cj" placeholder="Calibration contant (C):">
+                                <button type="button" name="Calculate" class="btn btn-primary">Calculate</button>
+                            </div>
+                        </div>                            
                         <div class="row">
                                 <div class="col">
                                     <div class="card" style="width: 18rem;">
@@ -796,6 +842,15 @@
                     </div>
                     <div class="card-body">
                     <div class="container">
+                        <div class="row"> 
+                            <div class="input-group margin">
+                                <div class="input-group-prepend">
+                                <div class="input-group-text">Size</div>
+                                </div>
+                                <input type="text" class="form-control" id="des-cj" placeholder="Calibration contant (C):">
+                                <button type="button" name="Calculate" class="btn btn-primary">Calculate</button>
+                            </div>
+                        </div>     
                         <div class="row">
                                 <div class="col">
                                     <div class="card" style="width: 18rem;">
@@ -863,6 +918,15 @@
                     </div>
                     <div class="card-body">
                     <div class="container">
+                        <div class="row"> 
+                            <div class="input-group margin">
+                                <div class="input-group-prepend">
+                                <div class="input-group-text">Size</div>
+                                </div>
+                                <input type="text" class="form-control" id="cod-cj" placeholder="Calibration contant (C):">
+                                <button type="button" name="Calculate" class="btn btn-primary">Calculate</button>
+                            </div>
+                        </div>  
                         <div class="row">
                                 <div class="col">
                                     <div class="card" style="width: 18rem;">

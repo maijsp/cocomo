@@ -9,10 +9,32 @@ calculate.addEventListener('click', () => {
     total.innerText = parseFloat(total_req + total_des + total_cod)
 
     // calculate for  Defect Removal Model
-    calculateDResReq(total_req)
     calculateDResDes(total_des)
     calculateDResCod(total_cod)
 })
+
+var DRreqCalculate = document.getElementsByName('Calculate')[1]
+DRreqCalculate.addEventListener('click', () => {
+    var total_req = calculateReq()
+    var Cj = document.getElementById('req-cj').value
+    calculateDResReq(total_req,Cj)
+})
+
+var DRreqCalculate = document.getElementsByName('Calculate')[2]
+DRreqCalculate.addEventListener('click', () => {
+    var total_req = calculateReq()
+    var Cj = document.getElementById('des-cj').value
+    calculateDResDes(total_req,Cj)
+})
+
+
+var DRreqCalculate = document.getElementsByName('Calculate')[3]
+DRreqCalculate.addEventListener('click', () => {
+    var total_req = calculateReq()
+    var Cj = document.getElementById('cod-cj').value
+    calculateDResCod(total_req,Cj)
+})
+
 
 function calculateReq(){
     var ACAP =  parseFloat(document.querySelector('input[name="req-acap"]:checked').value)
@@ -40,10 +62,12 @@ function calculateReq(){
   
     var TotalDireq = (ACAP) * (PCAP) * (AEXP) * (PEXP) * (LTEX) * (PCON) * (TOOL) * (SITE) * (SCED) * (TIME) * (STOR) * (PVOL)
                     * (RELY) * (DATA) * (RUSE) * (DOCU) * (CPLX) * (PREC) * (TEAM) * (RESL) * (PMAT)
-    var A = 2.5
-    var B = 1
+
+    var A = document.getElementById('req-A').value
+    var B = document.getElementById('req-B').value
+
     var Sum1 = A * (KLOC)**B * TotalDireq
-    console.log(Sum1)
+    console.log('DI req : ' + Sum1)
     document.getElementById('req-result').value = Sum1.toFixed(2)
     return Sum1
 }
@@ -75,10 +99,12 @@ function calculateDesign()
  
     var TotalDireq = (ACAP2) * (PCAP2) * (AEXP2) * (PEXP2) * (LTEX2) * (PCON2) * (TOOL2) * (SITE2) * (SCED2) * (TIME2) * (STOR2) * (PVOL2)
     * (RELY2) * (DATA2) * (RUSE2) * (DOCU2) * (CPLX2) * (PREC2) * (TEAM2) * (RESL2) * (PMAT2)
-    var A2 = 2.5
-    var B2 = 1
-    var Sum2 = A2 * (KLOC)**B2 * TotalDireq
-    console.log(Sum2)
+
+    var A = document.getElementById('des-A').value
+    var B = document.getElementById('des-B').value
+    
+    var Sum2 = A * (KLOC)**B * TotalDireq
+    console.log('DI Design : ' + Sum2)
     document.getElementById('des-result').value = Sum2.toFixed(2)
     return Sum2
 }
@@ -114,14 +140,16 @@ function calculateCoding()  {
             ( RELY) * ( DATA) * ( RUSE) * ( DOCU) * ( CPLX) * ( PREC) *
             ( TEAM) * ( RESL) * ( PMAT)
 
-    console.log(QAF)
-    var DIcode = parseFloat((A * ((kloc) ** 1) * QAF).toFixed(2))
+    var A = document.getElementById('req-A').value
+    var B = document.getElementById('req-B').value
+    var DIcode = parseFloat((A * ((kloc) ** B) * QAF).toFixed(2))
+    console.log('DI coding : ' + DIcode)
     document.querySelector('input[name="cod-result"]').value = DIcode.toFixed(2)
     return DIcode
 }
 
-function calculateDResReq(DIestimated) {
-    var Cj = 1 // just for stimulating, don't know the exact value yet
+function calculateDResReq(DIestimated, Cj) {
+    var Cj = parseFloat(Cj)
 
     // Get level of each profile ( total 3 profiles)
     var AUTO = parseFloat(document.querySelector('input[name="req-auto-val"]:checked').value)
@@ -133,14 +161,14 @@ function calculateDResReq(DIestimated) {
     var multiplicative = (1 - AUTO) * (1 - REVIEW) * (1 - TOOL)
     var result = (Cj * DIestimated * multiplicative)
 
-    console.log(result)
+    console.log('DI requirement' + result)
     // print result to id => total-req
     document.getElementById('total-req').innerText = result.toFixed(2)
 }
 
-function calculateDResDes(DIestimated) {
-    var Cj = 1 // just for stimulating, don't know the exact value yet
-
+function calculateDResDes(DIestimated, Cj) {
+    var Cj = parseFloat(Cj)
+    
     // Get level of each profile ( total 3 profiles)
     var AUTO = parseFloat(document.querySelector('input[name="des-auto-val"]:checked').value)
     var REVIEW = parseFloat(document.querySelector('input[name="des-revi-val"]:checked').value)
@@ -156,9 +184,8 @@ function calculateDResDes(DIestimated) {
     document.getElementById('total-des').innerText = result.toFixed(2)
 }
 
-function calculateDResCod(DIestimated) {
-    var Cj = 1 // just for stimulating, don't know the exact value yet
-
+function calculateDResCod(DIestimated, Cj) {
+    var Cj = parseFloat(Cj)
     // Get level of each profile ( total 3 profiles)
     var AUTO = parseFloat(document.querySelector('input[name="cod-auto-val"]:checked').value)
     var REVIEW = parseFloat(document.querySelector('input[name="cod-revi-val"]:checked').value)
@@ -167,9 +194,9 @@ function calculateDResCod(DIestimated) {
 
     // Calculate the DRes for artifact type coding
     var multiplicative = (1 - AUTO) * (1 - REVIEW) * (1 - TOOL)
+    console.log(Cj)
     var result = (Cj * DIestimated * multiplicative)
 
-    console.log(result)
     // print result to id => total-cod
     document.getElementById('total-cod').innerText = result.toFixed(2)
 }

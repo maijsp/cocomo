@@ -22,3 +22,11 @@ body {
  .table th {
     text-align: center;   
  }
+
+ .margin {
+    margin-bottom: 1rem;
+}
+
+.container {
+    margin-bottom: 1rem;
+}
