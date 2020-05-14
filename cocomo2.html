@@ -13,16 +13,15 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<link rel="stylesheet" href="css/simple-sidebar.css">
-<!-- Custom styles for this template -->
-<link href="css/simple-sidebar.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/simple-sidebar.css">
+    <!-- Custom styles for this template -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
 
 </head>
 
 <body>
 
     <div class="d-flex" id="wrapper">
-
         <!-- Sidebar -->
         <div class="bg-light border-right " id="sidebar-wrapper">
             <div class="sidebar-heading">COCOMO II</div>
@@ -41,23 +40,23 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                 <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
             </nav>
-
             <div id="application" class="main_container container-fluid">
-                <!-- Application Composition -->
-                <div class="row">
+                <div class="row"> <!-- Application Composition -->
                     <div class="col-md">
                         <h2 class="mt-4">Application Composition</h2>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-default">Object points count</span>
                             </div>
-                            <input name="opc" type="number" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                            <input name="opc" type="number" class="form-control" aria-label="Default"
+                                aria-describedby="inputGroup-sizing-default">
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-default">% reuse</span>
                             </div>
-                            <input name="reuse" type="number" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                            <input name="reuse" type="number" class="form-control" aria-label="Default"
+                                aria-describedby="inputGroup-sizing-default">
                         </div>
                         <div class="form-group">
                             <label for="prod">Developer's Experience and Development Environment Maturity</label>
@@ -70,15 +69,14 @@
                             </select>
                         </div>
                         <div class="center">
-                            <input class="btn btn-primary" type="button" value="Calculate" onclick="calculateApplication()">
+                            <input class="btn btn-primary" type="button" value="Calculate"
+                                onclick="calculateApplication()">
                         </div>
                         <div id="result-application">
                         </div>
                     </div>
                 </div> <!-- Appluication Composition ROW-->
-                
-                <!-- Early Design -->
-                <div class="row">
+                <div class="row"> <!-- Early Design -->
                     <div class="col-md">
                         <h2 class="mt-4">Early Design</h2>
                         <h5 class="mt-4">5 Scaling Factors</h5>
@@ -142,8 +140,7 @@
                         </div>
                     </div>
                 </div><!-- Early Design Row -->
-                <!-- 7 Effort Multipliers -->
-                <div class="row">
+                <div class="row"> <!-- 7 Effort Multipliers ROW-->
                     <div class="col-md">
                         <h5 class="mt-4">7 Effort Multipliers</h5>
                         <div class="dropdown-inline">
@@ -226,30 +223,149 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-default">KLOC</span>
+                        <!-- Early Design Size -->
+                        <div class="row"> <!-- First Row -->
+                            <div class="col-md">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroup-sizing-default1">ASLOC</span>
+                                    </div>
+                                    <input id="early-ASLOC" name="early-size" type="number" class="form-control"
+                                        aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                                </div>
                             </div>
-                            <input id="early-kloc" name="early-kloc" type="number" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                            <div class="col-md">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroup-sizing-default1">KNSLOC</span>
+                                    </div>
+                                    <input id="early-KSLOC" name="early-size" type="number" class="form-control"
+                                        aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroup-sizing-default1">UNFM</span>
+                                    </div>
+                                    <input id="early-UNFM" name="early-size" type="number" class="form-control"
+                                        aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroup-sizing-default1">AT</span>
+                                    </div>
+                                    <input id="early-AT" name="early-size" type="number" class="form-control"
+                                        aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroup-sizing-default1">KASLOC</span>
+                                    </div>
+                                    <input id="early-KASLOC" name="early-size" type="number" class="form-control"
+                                        aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row"> <!-- Second Row -->
+                            <div class="col-md">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroup-sizing-default1">DM</span>
+                                    </div>
+                                    <input id="early-DM" name="early-size" type="number" class="form-control"
+                                        aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroup-sizing-default1">ATPROD</span>
+                                    </div>
+                                    <input id="early-ATPROD" name="early-size" type="number" class="form-control"
+                                        aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroup-sizing-default1">AA</span>
+                                    </div>
+                                    <input id="early-AA" name="early-size" type="number" class="form-control"
+                                        aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroup-sizing-default1">CM</span>
+                                    </div>
+                                    <input id="early-CM" name="early-size" type="number" class="form-control"
+                                        aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroup-sizing-default1">AJ</span>
+                                    </div>
+                                    <input id="early-AJ" name="early-size" type="number" class="form-control"
+                                        aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row"> <!-- Third Row -->
+                            <div class="col-md">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroup-sizing-default1">SU</span>
+                                    </div>
+                                    <input id="early-SU" name="early-size" type="number" class="form-control"
+                                        aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroup-sizing-default1">IM</span>
+                                    </div>
+                                    <input id="early-IM" name="early-size" type="number" class="form-control"
+                                        aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroup-sizing-default1">BRAK</span>
+                                    </div>
+                                    <input id="early-BRAK" name="early-size" type="number" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                                </div>
+                            </div>
                         </div>
                         <div class="center">
                             <input class="btn btn-primary" type="button" value="Calculate" onclick="calculateEarlyDesign()">
                         </div>
                         <div id="result-early">
-        
                         </div>
                     </div>
-                </div><!-- 7 Effort Multipliers ROW-->
+                </div><!-- 7 Effort Multipliers ROW-->        
+                
 
-                <!-- 5 Scaling Factor -->
-                <div class="row">
+
+                
+                <!-- Post-Architecture -->
+                <div class="row"> <!-- 5 Scaling Factor -->
                     <div class="col-md">
                         <h2 class="mt-4">Post-Architecture</h2>
                         <h5 class="mt-4">5 Scaling Factors</h5>
                         <div class="dropdown-inline">
                             <div class="form-group dropdown-half">
                                 <label for="PREC1">Precedentedness</label>
-                                <select class="form-control" id="PREC">
+                                <select class="form-control" id="PREC1">
                                     <option value="4.05">Very Low</option>
                                     <option value="3.24">Low</option>
                                     <option value="2.43" selected>Norminal</option>
@@ -260,7 +376,7 @@
                             </div>
                             <div class="form-group dropdown-half">
                                 <label for="DFEX1">Development Flexibility</label>
-                                <select class="form-control" id="DFEX">
+                                <select class="form-control" id="DFEX1">
                                     <option value="6.07">Very Low</option>
                                     <option value="4.86">Low</option>
                                     <option value="3.64" selected>Norminal</option>
@@ -272,7 +388,7 @@
                             <div class="form-group dropdown-half">
                                 <label for="ARCH1">Architecture / Risk
                                     Resolution</label>
-                                <select class="form-control" id="ARCH">
+                                <select class="form-control" id="ARCH1">
                                     <option value="4.22">Very Low</option>
                                     <option value="3.38">Low</option>
                                     <option value="2.53" selected>Norminal</option>
@@ -283,7 +399,7 @@
                             </div>
                             <div class="form-group dropdown-half">
                                 <label for="TEAM1">Team Cohesion</label>
-                                <select class="form-control" id="TEAM">
+                                <select class="form-control" id="TEAM1">
                                     <option value="4.94">Very Low</option>
                                     <option value="3.95">Low</option>
                                     <option value="2.97" selected>Norminal</option>
@@ -294,7 +410,7 @@
                             </div>
                             <div class="form-group dropdown-half">
                                 <label for="PRMY1">Process Maturity</label>
-                                <select class="form-control" id="PRMY">
+                                <select class="form-control" id="PRMY1">
                                     <option value="4.54">Very Low</option>
                                     <option value="3.64">Low</option>
                                     <option value="2.73" selected>Norminal</option>
@@ -305,8 +421,7 @@
                             </div>
                         </div>
                     </div>
-                </div><!-- 5 Scaling Factor ROW -->
-
+                </div> <!-- 5 Scaling Factor ROW -->
                 <!-- 17 Effort Multipliers -->
                 <div class="row">
                     <div class="col-md">
@@ -322,7 +437,7 @@
                                     <option value="1.39">Very High</option>
                                 </select>
                             </div>
-                            
+
                             <div class="form-group dropdown-half">
                                 <label for="DATA">DATA</label>
                                 <select class="form-control" id="DATA">
@@ -332,99 +447,99 @@
                                     <option value="1.19">Very High</option>
                                 </select>
                             </div>
-                            
-                                <div class="form-group dropdown-half">
-                                    <label for="CPLX">CPLX</label>
-                                    <select class="form-control" id="CPLX">
-                                        <option value="0.75">Very Low</option>
-                                        <option value="0.88">Low</option>
-                                        <option value="1.00" selected>Norminal</option>
-                                        <option value="1.15">High</option>
-                                        <option value="1.30">Very High</option>
-                                        <option value="1.66">Extra High</option>
+
+                            <div class="form-group dropdown-half">
+                                <label for="CPLX">CPLX</label>
+                                <select class="form-control" id="CPLX">
+                                    <option value="0.75">Very Low</option>
+                                    <option value="0.88">Low</option>
+                                    <option value="1.00" selected>Norminal</option>
+                                    <option value="1.15">High</option>
+                                    <option value="1.30">Very High</option>
+                                    <option value="1.66">Extra High</option>
                                 </select>
                             </div>
-                            
-                                <div class="form-group dropdown-half">
-                                    <label for="RUSE1">RUSE</label>
-                                    <select class="form-control" id="RUSE1">
-                                        <option value="0.91">Low</option>
-                                        <option value="1.00" selected>Norminal</option>
-                                        <option value="1.14">High</option>
-                                        <option value="1.29">Very High</option>
-                                        <option value="1.49">Extra High</option>
+
+                            <div class="form-group dropdown-half">
+                                <label for="RUSE1">RUSE</label>
+                                <select class="form-control" id="RUSE1">
+                                    <option value="0.91">Low</option>
+                                    <option value="1.00" selected>Norminal</option>
+                                    <option value="1.14">High</option>
+                                    <option value="1.29">Very High</option>
+                                    <option value="1.49">Extra High</option>
                                 </select>
                             </div>
-                                
-                                <div class="form-group dropdown-half">
-                                    <label for="DOCU">DOCU</label>
-                                    <select class="form-control" id="DOCU">
-                                        <option value="0.89">Very Low</option>
-                                        <option value="0.95">Low</option>
-                                        <option value="1.00" selected>Norminal</option>
-                                        <option value="1.06">High</option>
-                                        <option value="1.13">Very High</option>
+
+                            <div class="form-group dropdown-half">
+                                <label for="DOCU">DOCU</label>
+                                <select class="form-control" id="DOCU">
+                                    <option value="0.89">Very Low</option>
+                                    <option value="0.95">Low</option>
+                                    <option value="1.00" selected>Norminal</option>
+                                    <option value="1.06">High</option>
+                                    <option value="1.13">Very High</option>
                                 </select>
                             </div>
                         </div>
-                             
+
                     </div>
                 </div><!-- 17 Effort Multipliers ROW -->
 
                 <div class="row">
                     <div class="col-md">
                         <div class="dropdown-inline">
-                                <div class="form-group dropdown-half">
-                                    <label for="TIME">TIME</label>
-                                    <select class="form-control" id="TIME">
-                                        <option value="1.00" selected>Norminal</option>
-                                        <option value="1.11">High</option>
-                                        <option value="1.31">Very High</option>
-                                        <option value="1.67">Extra High</option>
-                                    </select>
-                                </div>
-                            
-                                <div class="form-group dropdown-half">
-                                    <label for="STOR">STOR</label>
-                                    <select class="form-control" id="STOR">
-                                        <option value="1.00" selected>Norminal</option>
-                                        <option value="1.06">High</option>
-                                        <option value="1.21">Very High</option>
-                                        <option value="1.57">Extra High</option>
-                                    </select>
-                                </div>
-                            
-                                <div class="form-group dropdown-half">
-                                    <label for="PVOL">PVOL</label>
-                                    <select class="form-control" id="PVOL">
-                                        <option value="0.87">Low</option>
-                                        <option value="1.00" selected>Norminal</option>
-                                        <option value="1.15">High</option>
-                                        <option value="1.30">Very High</option>
-                                    </select>
-                                </div>
-                            
-                                <div class="form-group dropdown-half">
-                                    <label for="ACAP">ACAP</label>
-                                    <select class="form-control" id="ACAP">
-                                        <option value="1.50">Very Low</option>
-                                        <option value="1.22">Low</option>
-                                        <option value="1.00" selected>Norminal</option>
-                                        <option value="0.83">High</option>
-                                        <option value="0.67">Very High</option>
+                            <div class="form-group dropdown-half">
+                                <label for="TIME">TIME</label>
+                                <select class="form-control" id="TIME">
+                                    <option value="1.00" selected>Norminal</option>
+                                    <option value="1.11">High</option>
+                                    <option value="1.31">Very High</option>
+                                    <option value="1.67">Extra High</option>
                                 </select>
-                                </div>
-                            
-                                <div class="form-group dropdown-half">
-                                    <label for="PCAP">PCAP</label>
-                                    <select class="form-control" id="PCAP">
-                                        <option value="1.37">Very Low</option>
-                                        <option value="1.16">Low</option>
-                                        <option value="1.00" selected>Norminal</option>
-                                        <option value="0.87">High</option>
-                                        <option value="0.74">Very High</option>
-                                    </select>
-                                </div>
+                            </div>
+
+                            <div class="form-group dropdown-half">
+                                <label for="STOR">STOR</label>
+                                <select class="form-control" id="STOR">
+                                    <option value="1.00" selected>Norminal</option>
+                                    <option value="1.06">High</option>
+                                    <option value="1.21">Very High</option>
+                                    <option value="1.57">Extra High</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group dropdown-half">
+                                <label for="PVOL">PVOL</label>
+                                <select class="form-control" id="PVOL">
+                                    <option value="0.87">Low</option>
+                                    <option value="1.00" selected>Norminal</option>
+                                    <option value="1.15">High</option>
+                                    <option value="1.30">Very High</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group dropdown-half">
+                                <label for="ACAP">ACAP</label>
+                                <select class="form-control" id="ACAP">
+                                    <option value="1.50">Very Low</option>
+                                    <option value="1.22">Low</option>
+                                    <option value="1.00" selected>Norminal</option>
+                                    <option value="0.83">High</option>
+                                    <option value="0.67">Very High</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group dropdown-half">
+                                <label for="PCAP">PCAP</label>
+                                <select class="form-control" id="PCAP">
+                                    <option value="1.37">Very Low</option>
+                                    <option value="1.16">Low</option>
+                                    <option value="1.00" selected>Norminal</option>
+                                    <option value="0.87">High</option>
+                                    <option value="0.74">Very High</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -440,9 +555,9 @@
                                     <option value="1.00" selected>Norminal</option>
                                     <option value="0.92">High</option>
                                     <option value="0.84">Very High</option>
-                            </select>
-                        </div>
-                        
+                                </select>
+                            </div>
+
                             <div class="form-group dropdown-half">
                                 <label for="AXEP">AXEP</label>
                                 <select class="form-control" id="AXEP">
@@ -451,9 +566,9 @@
                                     <option value="1.00" selected>Norminal</option>
                                     <option value="0.89">High</option>
                                     <option value="0.81">Very High</option>
-                            </select>
-                        </div>
-                        
+                                </select>
+                            </div>
+
                             <div class="form-group dropdown-half">
                                 <label for="PEXP">PEXP</label>
                                 <select class="form-control" id="PEXP">
@@ -462,9 +577,9 @@
                                     <option value="1.00" selected>Norminal</option>
                                     <option value="0.88">High</option>
                                     <option value="0.81">Very High</option>
-                            </select>
-                        </div>
-                        
+                                </select>
+                            </div>
+
                             <div class="form-group dropdown-half">
                                 <label for="LTEX">LTEX</label>
                                 <select class="form-control" id="LTEX">
@@ -473,9 +588,9 @@
                                     <option value="1.00" selected>Norminal</option>
                                     <option value="0.91">High</option>
                                     <option value="0.84">Very High</option>
-                            </select>
-                        </div>
-                        
+                                </select>
+                            </div>
+
                             <div class="form-group dropdown-half">
                                 <label for="TOOL">TOOL</label>
                                 <select class="form-control" id="TOOL">
@@ -484,10 +599,10 @@
                                     <option value="1.00" selected>Norminal</option>
                                     <option value="0.86">High</option>
                                     <option value="0.72">Very High</option>
-                            </select>
+                                </select>
+                            </div>
                         </div>
-                        </div>
-                    
+
                     </div>
                 </div>
 
@@ -503,75 +618,181 @@
                                     <option value="0.92">High</option>
                                     <option value="0.84">Very High</option>
                                     <option value="0.78">Extra High</option>
-                            </select>
-                        </div>
-                        
+                                </select>
+                            </div>
+
                             <div class="form-group dropdown-half">
-                                <label for="SCED">SCED</label>
-                                <select class="form-control" id="SCED">
+                                <label for="SCED1">SCED</label>
+                                <select class="form-control" id="SCED1">
                                     <option value="1.29">Very Low</option>
                                     <option value="1.10">Low</option>
                                     <option value="1.00" selected>Norminal</option>
                                     <option value="1.00">High</option>
                                     <option value="1.00">Very High</option>
-                            </select>
+                                </select>
+                            </div>
                         </div>
-                    </div>
                     </div>
                 </div>
 
-                <div class="row">
+                <!-- For Size Calculation -->
+                <div class="row"> <!-- First Row -->
                     <div class="col-md">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-default1">KLOC</span>
+                                <span class="input-group-text" id="inputGroup-sizing-default1">ASLOC</span>
                             </div>
-                            <input id="early-kloc1" name="early-kloc1" type="number" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                            <input id="post-ASLOC" name="post-size" type="number" class="form-control"
+                                aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default1">KNSLOC</span>
+                            </div>
+                            <input id="post-KSLOC" name="post-size" type="number" class="form-control"
+                                aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default1">UNFM</span>
+                            </div>
+                            <input id="post-UNFM" name="post-size" type="number" class="form-control"
+                                aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default1">AT</span>
+                            </div>
+                            <input id="post-AT" name="post-size" type="number" class="form-control"
+                                aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default1">KASLOC</span>
+                            </div>
+                            <input id="post-KASLOC" name="post-size" type="number" class="form-control"
+                                aria-label="Default" aria-describedby="inputGroup-sizing-default">
                         </div>
                     </div>
                 </div>
-
-                <div class = "row">
-                    <div class = "col-md">
+                <div class="row"> <!-- Second Row -->
+                    <div class="col-md">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default1">DM</span>
+                            </div>
+                            <input id="post-DM" name="post-size" type="number" class="form-control"
+                                aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default1">ATPROD</span>
+                            </div>
+                            <input id="post-ATPROD" name="post-size" type="number" class="form-control"
+                                aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default1">AA</span>
+                            </div>
+                            <input id="post-AA" name="post-size" type="number" class="form-control"
+                                aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default1">CM</span>
+                            </div>
+                            <input id="post-CM" name="post-size" type="number" class="form-control"
+                                aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default1">AJ</span>
+                            </div>
+                            <input id="post-AJ" name="post-size" type="number" class="form-control"
+                                aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        </div>
+                    </div>
+                </div>
+                <div class="row"> <!-- Third Row -->
+                    <div class="col-md">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default1">SU</span>
+                            </div>
+                            <input id="post-SU" name="post-size" type="number" class="form-control"
+                                aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default1">IM</span>
+                            </div>
+                            <input id="post-IM" name="post-size" type="number" class="form-control"
+                                aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default1">BRAK</span>
+                            </div>
+                            <input id="post-BRAK" name="post-size" type="number" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        </div>
+                    </div>
+                </div>
+                <div class="row"> <!-- Fourth Row -->
+                    <div class="col-md">
                         <div class="center">
                             <input class="btn btn-primary" type="button" value="Calculate" onclick="calculatePost()">
                         </div>
                     </div>
                 </div>
+                <!-- End Size Calculation -->
                 <div id="result-post">
+                </div>
+            </div>
+        </div><!-- MAIN CONTAINER FLUID-->
 
-            </div>
-                
-            </div>
-            
-                
-            </div><!-- MAIN CONTAINER FLUID-->
-            
-        </div> <!-- Page content Wrapper-->
-                <!-- /#wrapper -->
+    </div> <!-- Page content Wrapper-->
+    <!-- /#wrapper -->
     </div>
-                <!-- Bootstrap core JavaScript -->
-                <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-                    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-                    crossorigin="anonymous">
-                </script>
-                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-                    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-                    crossorigin="anonymous">
-                </script>
-                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-                    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-                    crossorigin="anonymous">
-                </script>
-                <script src="js/cocomo2.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script src="js/cocomo2.js"></script>
 
-                <!-- Menu Toggle Script -->
-                <script>
-                    $("#menu-toggle").click(function (e) {
-                        e.preventDefault();
-                        $("#wrapper").toggleClass("toggled");
-                    });
-                </script>
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
 
 </body>
 

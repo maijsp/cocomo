@@ -21,8 +21,11 @@ function calculateApplication() {
     '   </h5></div></div></div>')
 }
 
-//scaling factor
-function calculateB() {
+/**
+ * @returns B 
+ * This function is calculate B - Scaling factor for Early-Design
+ */
+function calculateBearly() {
     var firstfact = document.getElementById('PREC')
     var secondfact = document.getElementById('DFEX') 
     var thirdfact = document.getElementById('ARCH')
@@ -35,17 +38,69 @@ function calculateB() {
     var fifth = fifthfact.options[fifthfact.selectedIndex].value
     var sum = 0
     sum = parseFloat(one) + parseFloat(second) + parseFloat(three) + parseFloat(forth) + parseFloat(fifth)
-    console.log(sum)
     var B = 1.01+(0.01 *(sum));
     console.log(B)
     return B;
-        
 }
 
+/**
+ * @returns B 
+ * This function is calculate B - Scaling factor for Early-Design
+ */
+function calculateSizeEarly() {
+    var sizeref = document.getElementsByName('early-size')
+    console.log(sizeref)
+    
+    // Calculate AAF
+    var DM = sizeref[5].value
+    var CM = sizeref[8].value
+    var IM = sizeref[11].value
+    var AAF = (0.4*DM)+(0.3*CM)+(0.3*IM) // formula
+    console.log("AAF " +AAF)
 
+    // Calculate AAM
+    var AA = sizeref[7].value
+    var SU = sizeref[10].value
+    var UNFM = sizeref[2].value
+    var AAM;
+    if(AAF > 0.05) {
+        AAM = (AA + (AAF*(1+(0.02 * SU * UNFM))))/100 // formula
+    }
+    else {
+        AAM = (AA + AAF + (SU * UNFM))/100 // formula
+    }
+    console.log("AAM "+ AAM)
+
+    // Calculate Size
+    var KNSLOC = sizeref[1].value
+    var KASLOC = sizeref[4].value
+    var AJ =  sizeref[9].value
+    var Size = KNSLOC + (KASLOC*((100-AJ)/100)*AAM) // formula
+    console.log("SIze " + Size)
+
+    // Calculate SizePram
+    var BRAK = sizeref[12].value
+    var SizePram = Size*(1+(BRAK)/100) // formula
+    console.log("Post - SizePram : " + SizePram)
+
+    // return SizePram
+    return SizePram
+}
+
+/**
+ * This function is used to calculate Effort for Post-Architecture
+ */
 function calculateEarlyDesign() {
     var A = 2.5
-    var B = calculateB()
+    var B = calculateBearly()
+    var Size = calculateSizeEarly()
+
+    var sizeref = document.getElementsByName('early-size')
+    var ASLOC = sizeref[0].value
+    var ATPROD = sizeref[6].value
+    var AT = sizeref[3].value
+    var PMm = ((ASLOC*(AT/100))/ATPROD)
+
     var RCPX = parseFloat(document.getElementById('RCPX').value)
     var RUSE = parseFloat(document.getElementById('RUSE').value)
     var PDIF = parseFloat(document.getElementById('PDIF').value)
@@ -53,12 +108,9 @@ function calculateEarlyDesign() {
     var PREX = parseFloat(document.getElementById('PREX').value)
     var FCIL = parseFloat(document.getElementById('FCIL').value)
     var SCED = parseFloat(document.getElementById('SCED').value)
-    // var kloc = document.getElementById('early-design').getElementsByTagName('input')
-    var kloc = parseFloat(document.getElementById('early-kloc').value)
 
     var EM = RCPX * RUSE * PDIF * PERS * PREX * FCIL * SCED
-    // console.log('EM : ' + EM + ' KLOC : ' + kloc)
-    var PM = (A * (kloc ** B) * EM).toFixed(2)
+    var PM = (A * (Size ** B) * EM) + PMm
     console.log('Effort : ' + PM)
 
     $('#result-early').html('');
@@ -69,31 +121,89 @@ function calculateEarlyDesign() {
     '   </h5></div></div></div>')
 }
 
-function calculateBPost()
-{
-    
-        var firstfact1 = document.getElementById('PREC')
-        var secondfact1 = document.getElementById('DFEX') 
-        var thirdfact1 = document.getElementById('ARCH')
-        var forthfact1 = document.getElementById('TEAM')
-        var fifthfact1 = document.getElementById('PRMY')
-        var one1 = firstfact1.options[firstfact1.selectedIndex].value
-        var second1 = secondfact1.options[secondfact1.selectedIndex].value
-        var three1 = thirdfact1.options[thirdfact1.selectedIndex].value
-        var forth1 = forthfact1.options[forthfact1.selectedIndex].value
-        var fifth1 = fifthfact1.options[fifthfact1.selectedIndex].value
-        var sum1 = 0
-        sum1 = parseFloat(one1) + parseFloat(second1) + parseFloat(three1) + parseFloat(forth1) + parseFloat(fifth1)
-        console.log(sum1)
-        var B1 = 1.01+(0.01 *(sum1));
-        console.log(B1)
-        return B1;
+
+/**
+ * @returns B 
+ * This function is calculate B - Scaling factor for Post-Architecture
+ */
+function calculateBPost() {
+    var firstfact = document.getElementById('PREC1')
+    var secondfact = document.getElementById('DFEX1') 
+    var thirdfact = document.getElementById('ARCH1')
+    var forthfact = document.getElementById('TEAM1')
+    var fifthfact = document.getElementById('PRMY1')
+    var one = firstfact.options[firstfact.selectedIndex].value
+    var second = secondfact.options[secondfact.selectedIndex].value
+    var three = thirdfact.options[thirdfact.selectedIndex].value
+    var forth = forthfact.options[forthfact.selectedIndex].value
+    var fifth = fifthfact.options[fifthfact.selectedIndex].value
+    var sum = 0
+    sum = parseFloat(one) + parseFloat(second) + parseFloat(three) + parseFloat(forth) + parseFloat(fifth)
+    console.log(sum)
+    var B = 1.01+(0.01 *(sum))
+    console.log(B)
+    return B
 }
 
-function calculatePost()
-{
-    var A1 = 2.5
-    var B1 = calculateBPost()
+/**
+ * @return SizePram
+ * This function is to calculate the Size for Post-Architecture
+ */
+function calculateSizePost() {
+    var sizeref = document.getElementsByName('post-size')
+    console.log(sizeref)
+    
+    // Calculate AAF
+    var DM = sizeref[5].value
+    var CM = sizeref[8].value
+    var IM = sizeref[11].value
+    var AAF = (0.4*DM)+(0.3*CM)+(0.3*IM) // formula
+    console.log("AAF " +AAF)
+
+    // Calculate AAM
+    var AA = sizeref[7].value
+    var SU = sizeref[10].value
+    var UNFM = sizeref[2].value
+    var AAM;
+    if(AAF > 0.05) {
+        AAM = (AA + (AAF*(1+(0.02 * SU * UNFM))))/100 // formula
+    }
+    else {
+        AAM = (AA + AAF + (SU * UNFM))/100 // formula
+    }
+    console.log("AAM "+ AAM)
+
+    // Calculate Size
+    var KNSLOC = sizeref[1].value
+    var KASLOC = sizeref[4].value
+    var AJ =  sizeref[9].value
+    var Size = KNSLOC + (KASLOC*((100-AJ)/100)*AAM) // formula
+    console.log("SIze " + Size)
+
+    // Calculate SizePram
+    var BRAK = sizeref[12].value
+    var SizePram = Size*(1+(BRAK)/100) // formula
+    console.log("Post - SizePram : " + SizePram)
+
+    // return SizePram
+    return SizePram
+}
+
+/**
+ * This function is used to calculate Effort for Post-Architecture
+ */
+function calculatePost() {
+    
+    var A = 2.5
+    var B = calculateBPost()
+    var size = calculateSizePost()
+
+    var sizeref = document.getElementsByName('post-size')
+    var ASLOC = sizeref[0].value
+    var ATPROD = sizeref[6].value
+    var AT = sizeref[3].value
+    var PMm = ((ASLOC*(AT/100))/ATPROD)
+
     var RELY = parseFloat(document.getElementById('RELY').value)
     var DATA = parseFloat(document.getElementById('DATA').value)
     var CPLX = parseFloat(document.getElementById('CPLX').value)
@@ -110,24 +220,21 @@ function calculatePost()
     var LTEX = parseFloat(document.getElementById('LTEX').value)
     var TOOL = parseFloat(document.getElementById('TOOL').value)
     var SITE = parseFloat(document.getElementById('SITE').value)
-    var SCED = parseFloat(document.getElementById('SCED').value)
-    var kloc1 = parseFloat(document.getElementById('early-kloc1').value)
+    var SCED = parseFloat(document.getElementById('SCED1').value)
 
-    console.log(PCON)
 
+    // Calculate 17 Effort Multiplieres
     var EM1 = RELY * DATA * CPLX * RUSE1 * DOCU * TIME * STOR * PVOL * ACAP * PCAP * PCON * AXEP 
              * PEXP * LTEX * TOOL * SITE * SCED
-    //console.log(EM1)
-    var PM1 = (A1 * (kloc1 ** B1) * EM1).toFixed(2)
-    console.log('Effort : ' + PM1)
-
+    
+    var PM = (A * (size ** B) * EM1) + PMm
+    console.log('Effort : ' + PM)
     
     $('#result-post').html('');
     $('#result-post').append('<div class="shadow-drop-center card border-success mb-3 style="max-width: 18rem;">'+
     '<div class="card-header">Result'+
     '<div class="card-body text-success">'+
-        '<h5 class="card-title">Effort : ' + PM1 +
+        '<h5 class="card-title">Effort : ' + PM +
     '   </h5></div></div></div>')
-    
 }
 
